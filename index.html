@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/index.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700&display=swap");
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Kuya Bai Baybayin Translator" />
+    <meta
+      property="og:description"
+      content="Translate words to Baybayin"
+    />
+    <!-- <meta
+      property="og:image"
+      content="https://jennayey.com/philippine-scripts-translator/assets/images/OG/share-card.jpg"
+    /> -->
+    <meta
+      property="og:url"
+      content="https://jennayey.com/philippine-scripts-translator/"
+    />
+
+    <meta name="twitter:title" content="Kuya Bai Translator" />
+    <meta
+      name="twitter:description"
+      content="Translate words and sentences to the Philippine Writing Scripts"
+    />
+    <!-- <meta
+      name="twitter:image"
+      content="https://jennayey.com/philippine-scripts-translator/assets/images/OG/share-card.jpg"
+    /> -->
+    <!-- <meta name="twitter:card" content="summary_large_image" /> -->
+
+    <title>Kuya Bai Baybayin Translator</title>
+    <meta
+      name="description"
+      content="Translates words and sentences to the Baybayin, Hanunoo, Buhid and Tagbanwa scripts"
+    />
+  </head>
+  <body>
+    <div id="toast">
+      <p>Text copied</p>
+    </div>
+
+    <div class="flex-row">
+      <!-- Navigation / Header  -->
+      <div id="navigation-header" class="header">
+        <img src="/assets/images/icons/KuyaBai_Logo.png" width="50px"alt="">
+        <h3>Baybayin Script Translator</h3>
+        <!-- <a href='https://ko-fi.com/I2I0230S1' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
+      </div>
+      <!-- Navigation / Header End -->
+   
+      <!-- Main Translator Div -->
+      <div id="translatorMain" class="translator-main flex-jcc">
+        <!-- Translator Blocks Div  -->
+        <div class="translator-main-blocks">
+          <!-- Tagalog Text Area -->
+          <div class="translator-main-blocks-raw border-right border-bottom">
+            <label for="tagalogTextArea">Tagalog</label>
+            <textarea
+              name="tagalog-text-area"
+              id="tagalogTextArea"
+              placeholder="Type text here"
+              onclick="focus()"
+              onkeyup="convertText()"
+            ></textarea>
+            <button
+              id="clearButton"
+              onclick="clearText()"
+              style="cursor: pointer"
+            >
+              Clear
+            </button>
+          </div>
+
+          <!-- Tagalog Text Area  End-->
+
+          <!-- Translated  Text Area -->
+          <div class="translator-main-blocks-translated border-bottom">
+            <label for="translatedTextArea">Translation</label>
+
+            <textarea
+              name="translated-text-area"
+              id="translatedTextArea"
+              readonly
+            ></textarea>
+            <button
+              id="copyButton"
+              onclick="copyText()"
+              style="cursor: pointer"
+            >
+              Copy
+            </button>
+          </div>
+
+          <!-- Translated Text Area  End-->
+        </div>
+        <!-- Translator Blocks Div End  -->
+      </div>
+      <!-- Main Translator Div -->
+    </div>
+  </body>
+</html>

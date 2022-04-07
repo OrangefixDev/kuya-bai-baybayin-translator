@@ -1,0 +1,417 @@
+/* 
+Philippine Translator Scripts Stylesheet
+
+01 Variables
+02 Fonts
+03 Desktop Styles
+04 Mobile Styles 
+*/
+
+/* 01 Variables */
+:root {
+  --border-radius: 10px;
+  --gray-light: #f5f5f5;
+  --gray-medium: #ebebeb;
+  --box-shadow-darker: 0px 5px 5px rgba(0, 0, 0, 0.12); 
+
+--disabled-text:	#CCCCCC;
+--gray-text: #6A6A6A;
+--gray:	#CDD8DB;
+--text-main: #27282D;
+--dark-green: #3CA123;
+--light-green:	#74C460;
+--brown:	#42210B;
+--yellow: #FFB82F;
+
+  --box-shadow: 0px 4px 5px rgba(210, 210, 210, 0.25);
+  --font-size-desktop: 2em;
+  --font-size-mobile: 1.5em;
+  --font-size-buttons-mobile: 1.25em;
+}
+
+/* ************************************************************************************************** */
+/* 02 Fonts */
+
+@font-face {
+  font-family: Baybayin;
+  src: url(.././assets/fonts/Baybayin/TintangBaybayin.otf);
+}
+
+@font-face {
+  font-family: BaybayinNamin;
+  src: url(.././assets/fonts/Baybayin/Bay.otf);
+}
+
+
+@font-face {
+  font-family: Hanunoo;
+  src: url(.././assets/fonts/Baybayin/TintangHanunuo.otf);
+}
+
+@font-face {
+  font-family: Buhid;
+  src: url(.././assets/fonts/Baybayin/TintangBuhid.otf);
+}
+
+@font-face {
+  font-family: Tagbanwa;
+  src: url(.././assets/fonts/Baybayin/TintangTagbanwa.otf);
+}
+
+/* @font-face {
+  font-family: Hanunuo;
+  src: url(TintangHanunuo.otf);
+} */
+/* ************************************************************************************************** */
+
+/* 03 Desktop Styles */
+
+/* Text Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+a {
+  /* font-family: 'Inter', sans-serif; */
+
+  font-family: "Lexend Deca", sans-serif;
+  /* font-family: Ubuntu Regular; */
+  color: var(--main-color);
+  margin: 0;
+  font-weight: 600;
+}
+h4 {
+  color: #4a4a4a;
+}
+
+.disabled {
+  color: var(--gray-medium);
+}
+
+p {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 600;
+  color: var(--plain-text-color);
+}
+
+/* Container Styles */
+body {
+  margin: 0px;
+}
+
+.translator-main-switch,
+.header {
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  margin-bottom: 10vh;
+  /* justify-content: ; */
+}
+.header {
+  justify-content: center;
+  padding: 0 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.translator-main-blocks {
+  width: 90vw;
+  display: flex;
+  border: solid 1px var(--gray);
+border-radius: 15px;
+
+}
+
+.translator-main-blocks div {
+  flex: 50%;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.flex-jcc {
+  display: flex;
+  justify-content: center;
+}
+
+/* .border-bottom {
+  border-bottom: solid;
+  border-color: var(--gray-light);
+} */
+
+.border-right {
+  border-right: solid;
+  border-color: var(--gray-light);
+}
+
+textarea,
+button {
+  border: none;
+  outline: none;
+}
+
+button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #ffffff00;
+}
+
+textarea {
+  margin-top: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30vh;
+  resize: none;
+  font-size: 2em;
+  color: var(--text-main);
+  font-size: var(--font-size-desktop);
+  line-height: 1.5em;
+ font-family: 'Lexend Deca', sans-serif;;
+}
+
+.translator-main-blocks-translated {
+  background-color: var(--gray-light);
+  border-radius: 0 15px 15px 0;
+}
+.translator-main-blocks-translated > * {
+  background-color: var(--gray-light);
+}
+
+
+
+.translator-main-blocks button {
+  /* font-size: var(--font-size-mobile); */
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 600;  
+  color: var(--brown);
+  background-color: var(--gray-medium);
+}
+
+#copyButton {
+  background-color: var(--light-green);
+  color: white;
+}
+button:hover {
+  background-color: var(--light-green);
+}
+#translatedTextArea {
+  /* font-family: Baybayin; */
+}
+
+
+
+
+
+.baybayin {
+  font-family: Baybayin;
+}
+.hanunoo {
+  font-family: Hanunoo;
+}
+
+.buhid {
+  font-family: Buhid;
+}
+
+.tagbanwa {
+  font-family: Tagbanwa;
+}
+
+/* Toast */
+
+#toast {
+  visibility: hidden;
+  /*Hidden by default. Visible on click */
+  min-width: 20vw; /* Set a default minimum width */
+  margin-right: -10vw; /* Divide value of min-width by 2 */
+  background-color: var(--accent-color); /* Black background color */
+  text-align: center;
+
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  right: 50%; /* Center the toast */
+  bottom: 50px; /* 30px from the bottom */
+}
+#toast p {
+  margin: 15px;
+}
+
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.3s, fadeout 0.3s 2s;
+}
+
+/* Dropdown Styles */
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown {
+  border: solid;
+  border-radius: 20px;
+  border-color: var(--gray-medium);
+}
+
+.dropdown-contents {
+  margin-top: 10px;
+  display: none;
+  position: absolute;
+  background-color: white;
+  text-align: center;
+  min-width: 220px;
+
+  right: -8px;
+
+  box-shadow: var(--box-shadow-darker);
+  border-radius: 20px;
+}
+
+.dropdown-contents a {
+  display: block;
+  padding: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.selected {
+  background-color: var(--gray-medium);
+}
+
+.show {
+  display: block;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.caret-icon {
+  margin: 0px 5px;
+  display: inline-block;
+}
+
+#languageSelector {
+  display: inline-block;
+}
+
+#languageSelected {
+  display: inline-block;
+}
+/* ************************************************************************************************** */
+
+/* 04 Mobile Styles */
+
+@media screen and (max-width: 728px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .select-css {
+    font-size: 1em;
+  }
+  /* .header {
+    height: 10vh;
+    order: 1;
+  }
+
+  .translator-main {
+    order:2;
+  }
+
+  .switch  {
+order: 3;
+  } */
+  .header {
+    /* height: 10vh; */
+    height: 70px;
+    margin-bottom: 0;
+  }
+
+  .header h3 {
+    margin: 10px;
+  }
+
+  #languageSwitch,
+  .translator-main-switch {
+    height: 70px;
+  }
+  /* .translator-main-switch-content {
+    margin: 10px;
+    width: 80vw;
+  } */
+  textarea {
+    font-size: var(--font-size-mobile);
+    /* height  : 80%; */
+    /* padding: 10px; */
+  }
+
+  .translator-main-blocks {
+    flex-wrap: wrap;
+    width: 100%;
+    flex-basis: 100%;
+    border-radius: 0;
+  }
+  .translator-main-blocks-translated,
+  .translator-main-blocks-raw {
+    flex: 0 0 40vh;
+  }
+  .translator-main-blocks > * {
+    border: none;
+  }
+  .translator-main-blocks-translated {
+    background-color: var(--gray-light);
+    border-radius: 0;
+  }
+  .translator-main-blocks button {
+    font-size: var(--font-size-buttons-mobile);
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    color: var(--main-color);
+  }
+  .translator-main-blocks-translated > *,
+  .translator-main-blocks-translated button {
+    background-color: var(--main-color);
+    color: var(--brown);
+  }
+  .translator-main-blocks-translated button {
+    background-color: var(--light-green);
+  }
+  button {
+    background-color: var(--gray-medium);
+    
+  }
+
+  #toast {
+    /*Hidden by default. Visible on click */
+    min-width: 100vw; /* Set a default minimum width */
+    margin-right: -50vw; /* Divide value of min-width by 2 */
+    right: 50%; /* Center the toast */
+    bottom: 0; /* 30px from the bottom */
+  }
+  #toast p {
+    margin: 10px;
+  }
+}
