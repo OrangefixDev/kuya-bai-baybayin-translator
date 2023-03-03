@@ -116,6 +116,13 @@ body {
   box-shadow: var(--box-shadow);
 }
 
+/* TODO: A proper footer */
+.footer {
+  justify-content: center;
+  padding: 40px 80px;
+  /* box-shadow: var(--box-shadow); */
+}
+
 .flex-row {
   display: flex;
   flex-direction: column;
