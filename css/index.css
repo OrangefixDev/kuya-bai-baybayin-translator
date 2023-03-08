@@ -39,29 +39,9 @@ Philippine Translator Scripts Stylesheet
 
 @font-face {
   font-family: BaybayinNamin;
-  src: url(.././assets/fonts/Baybayin/Bay.otf);
+  src: url(.././assets/fonts/Baybayin/BaybayinNamin.otf);
 }
 
-
-@font-face {
-  font-family: Hanunoo;
-  src: url(.././assets/fonts/Baybayin/TintangHanunuo.otf);
-}
-
-@font-face {
-  font-family: Buhid;
-  src: url(.././assets/fonts/Baybayin/TintangBuhid.otf);
-}
-
-@font-face {
-  font-family: Tagbanwa;
-  src: url(.././assets/fonts/Baybayin/TintangTagbanwa.otf);
-}
-
-/* @font-face {
-  font-family: Hanunuo;
-  src: url(TintangHanunuo.otf);
-} */
 /* ************************************************************************************************** */
 
 /* 03 Desktop Styles */
