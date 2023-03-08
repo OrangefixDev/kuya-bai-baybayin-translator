@@ -77,6 +77,11 @@ p {
   color: var(--plain-text-color);
 }
 
+span {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--gray-text);
+}
+
 /* Container Styles */
 body {
   margin: 0px;
