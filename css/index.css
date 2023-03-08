@@ -79,7 +79,6 @@ p {
 
 span {
   font-family: "Lexend Deca", sans-serif;
-  color: var(--gray-text);
 }
 
 /* Container Styles */
@@ -207,16 +206,9 @@ button:hover {
 .baybayin {
   font-family: Baybayin;
 }
-.hanunoo {
-  font-family: Hanunoo;
-}
 
-.buhid {
-  font-family: Buhid;
-}
-
-.tagbanwa {
-  font-family: Tagbanwa;
+.baybayinnamin {
+  font-family: BaybayinNamin;
 }
 
 /* Toast */
