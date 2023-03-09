@@ -120,9 +120,19 @@ function baybayinTranslate() {
 
   return rawText;
 }
+
 function convertText() {
   let translatedText = document.getElementById("translatedTextArea");
   translatedText.value = baybayinTranslate();
-
 }
 
+function convert(){
+  let text = document.getElementById('translatedTextArea')
+  const image = document.getElementById('image')
+  const ctx = canvas.getContext('2d')
+  ctx.canvas.width = ctx.measureText(text.value).width
+  ctx.font = '10px Baybayin';
+  ctx.fillText(text.value,0,30)
+  let dataURL = canvas.toDataURL()
+  image.src = dataURL
+}

@@ -95,6 +95,7 @@
               name="translated-text-area"
               id="translatedTextArea"
               readonly
+              
             ></textarea>
             <button
               id="copyButton"
@@ -118,23 +119,8 @@
 
         <!--canvas test-->
           <canvas id="canvas" style="display:none;">
-
           </canvas>
           <img src="" id="image" alt="">
-
-          <script>
-            function convert(){
-              const input = document.getElementById('translatedTextArea')
-              // const canvas = document.getElementById('canvas')
-              const image = document.getElementById('image')
-              const ctx = canvas.getContext('2d')
-              ctx.canvas.width = ctx.measureText(input.value).width
-              ctx.fillText(input.value,0,30)
-              let dataURL = canvas.toDataURL()
-              image.src = dataURL
-            }
-            </script>
-
       </div>
 
           <!-- Translated Text Area  End-->
