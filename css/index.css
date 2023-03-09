@@ -195,6 +195,15 @@ textarea {
 button:hover {
   background-color: var(--light-green);
 }
+
+#convertButton {
+  background-color: var(--light-green);
+  color: white;
+}
+button:hover {
+  background-color: var(--light-green);
+} 
+
 #translatedTextArea {
   /* font-family: Baybayin; */
 }
