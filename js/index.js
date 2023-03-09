@@ -126,3 +126,15 @@ function convertText() {
 
 }
 
+function convert(){
+  let text = document.getElementById('translatedTextArea')
+  const image = document.getElementById('image')
+  const ctx = canvas.getContext('2d')
+  ctx.canvas.width = ctx.measureText(text.value).width
+  ctx.font = '30px Baybayin';
+  ctx.fillText(text.value,0,30)
+  let dataURL = canvas.toDataURL()
+  image.src = dataURL
+}
+
+

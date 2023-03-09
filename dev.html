@@ -72,7 +72,7 @@
             <textarea
               name="tagalog-text-area"
               id="tagalogTextArea"
-              placeholder="Type dev text here"
+              placeholder="Type text here"
               onclick="focus()"
               onkeyup="convertText()"
             ></textarea>
@@ -95,6 +95,7 @@
               name="translated-text-area"
               id="translatedTextArea"
               readonly
+              
             ></textarea>
             <button
               id="copyButton"
@@ -103,7 +104,59 @@
             >
               Copy
             </button>
+          <!--</div>-->
+
+          <button
+              id="convertButton"
+              onclick="convert()"
+              style="cursor: pointer"
+            >
+              convert
+            </button>
           </div>
+
+
+
+<!-- <script>
+          const text = "hello😉";
+          const url = $(location).attr('href');
+          const twitter = "Mcuello17";
+          $('a').on('click', function(e){
+              e.preventDefault();        
+              if($(this).hasClass('share-twitter')){    
+                 window.open('https://twitter.com/intent/tweet?via=' + twitter + '&text=' + text + '&url=' + url,
+                 'twiiter-share-dialog',
+                 'width=500, height=600');
+              }else if($(this).hasClass('share-whatsapp')){
+                 window.open('https://api.whatsapp.com/send?text='+ text + '%20via:%20' + url,
+                 'whatsapp-share-dialog');
+              }else if($(this).hasClass('share-facebook')){
+                  window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+                 'facebook-share-dialog',
+                 'width=600, height=600');
+              }
+          });
+        </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div style="border-style: solid;">
+
+    
+          <canvas id="canvas" style="display:none;">
+          </canvas>
+          <img src="" id="image" alt="">
+      </div> -->
 
           <!-- Translated Text Area  End-->
         </div>
