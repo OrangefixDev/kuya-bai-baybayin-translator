@@ -137,4 +137,11 @@ function convert(){
   image.src = dataURL
 }
 
+// action listen for the share button
+const shareBtn = document.querySelector('.share-btn');
+const shareOptions = document.querySelector('.share-options');
+
+shareBtn.addEventListener('click', () => {
+    shareOptions.classList.toggle('active');
+})
 
