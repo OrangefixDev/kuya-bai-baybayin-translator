@@ -138,10 +138,31 @@ function convert(){
 }
 
 // action listen for the share button
-const shareBtn = document.querySelector('.share-btn');
-const shareOptions = document.querySelector('.share-options');
+//const shareBtn = document.querySelector('.share-btn'); //document.getElementById('share-btn');
+//const shareOptions = document.querySelector('.share-options'); //document.getElementById('share-options');
+
+/*
+const shareBtn = document.getElementById('.share-btn');
+const shareOptions = document.getElementById('.share-options');
+
+
+console.log(shareBtn);
+console.log(shareOptions);
 
 shareBtn.addEventListener('click', () => {
     shareOptions.classList.toggle('active');
-})
+    console.log('btn clicked');
+})*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('share-btn');
+  const shareOptions = document.querySelector('.share-options');
+  console.log(btn);
+
+  // ✅ Works as expected
+  btn.addEventListener('click', () => {
+    shareOptions.classList.toggle('active');
+    console.log('btn clicked');
+  });
+});
 

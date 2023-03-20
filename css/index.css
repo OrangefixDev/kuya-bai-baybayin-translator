@@ -219,10 +219,13 @@ button:hover {
   position: absolute;
   bottom: 41.5%;
   left: 61.5%;
-  width: 25px;
-  height: 25px;
+  /*width: 25px;
+  height: 25px;*/
+  width: auto;
+  height: auto;
+  transform: scale(0);
   transform-origin: bottom left;
-  transform: scale(3.5);
+  /*transform: scale(3.5);*/
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background: rgba(15, 15, 15, 0.5);
@@ -232,11 +235,15 @@ button:hover {
   transition: .5s;
   transition-delay: .5s;;
   z-index: 1;
+}
 
+.share-options.active{
+  transform: scale(3.7);
+  transition-delay: 0s;
 }
 
 .share-title{
-  /*opacity: 1;*/
+  opacity: 1;
   transition: .5s;
   transition-delay: 0s;
   font-size: 5px;
@@ -254,7 +261,7 @@ button:hover {
   transition: .5s;
   transition-delay: 0s;
   width: 20px;
-  height: 20px;
+  height: 10px;
   /*display: inline-grid;*/
   display: grid;
   /*display: flex;*/
