@@ -199,9 +199,10 @@ button:hover {
   /* font-family: Baybayin; */
 }
 
-
- .share-btn{
+/* CSS of Share Functionality */
+/*#share-btn{
   position: absolute;
+  position: relative;
   border: none;
   background: #fff;
   color: #ff7d7d;
@@ -210,11 +211,11 @@ button:hover {
   padding-right: 3px;
   cursor: pointer;
   z-index: 2;
-} 
+}*/
 
 
 .share-options{
-  opacity:1;
+  /*opacity:1;*/
   position: absolute;
   bottom: 41.5%;
   left: 61.5%;
@@ -231,37 +232,44 @@ button:hover {
   transition: .5s;
   transition-delay: .5s;;
   z-index: 1;
+
 }
 
 .share-title{
-  opacity: 1;
+  /*opacity: 1;*/
   transition: .5s;
   transition-delay: 0s;
   font-size: 5px;
   text-transform: capitalize;
   border-bottom: 1px solid #fff;
   width: fit-content;
-  padding: 0 30px 1px 0;
-  margin: -12px -12px;
+  padding: 0 30px 0px 0;
+  margin: -10px -12px;
+  display: flex;
 }
 
-
-.social-media{
-  opacity: 1;
+#social-media{
+  /*opacity: 1;*/
+  grid-gap: 3px 5px;
   transition: .5s;
   transition-delay: 0s;
-  width: 100px;
-  height: 15px;
-  display: flex;
+  width: 20px;
+  height: 20px;
+  /*display: inline-grid;*/
+  display: grid;
+  /*display: flex;*/
   align-items: start;
   flex-wrap: wrap;
-  margin: -15px -40px;
+  margin: 14px -6px;
+  padding: 0;
 }
 
 .social-media-btn{
+  padding: 0;
+  border-radius: 0;
   border: none;
-  width: 1px;
-  height: 1px; 
+  width: 15px;
+  height: 15px; 
   border-radius: 50%;
   background: #000;
   color: #fff;
@@ -274,18 +282,26 @@ button:hover {
 
 .social-media-btn:nth-child(1){
   background: #FFA654;
+  grid-row: 1;
+  grid-column: 1;
 }
 
 .social-media-btn:nth-child(2){
   background: #25D366;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .social-media-btn:nth-child(3){
   background: #E4405F;
+  grid-row: 2;
+  grid-column: 1;
 }
 
 .social-media-btn:nth-child(4){
   background: #1DA1F2;
+  grid-row: 2;
+  grid-column: 2;
 }
 
 
