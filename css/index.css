@@ -530,18 +530,18 @@ order: 3;
 }
 
 
-
+span.footer-text {
+  font-size: 0.9em;
+  color: #6A6A6A
+}
 
 /* About us */
 details {
   user-select: none;
 }
 
-details>summary span.icon {
-  width: 24px;
-  height: 24px;
+details > summary span.icon {
   transition: all 0.3s;
-  margin-left: auto;
 }
 
 details[open] summary span.icon {
@@ -549,21 +549,21 @@ details[open] summary span.icon {
 }
 
 
-summary >*{
+summary > * {
 display: inline;
 }
 
 .summary_details {
-  background-color: #eeeeee;
-  padding: 4px;
-  border: 10;
+  padding-top: 1em;
   margin: 0;
-  box-shadow: 1px 1px 2px #bbbbbb;
 }
 
 summary {
   list-style-type: none; /* Firefox */
-  display: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
   border: none;
   cursor: pointer;
 }
