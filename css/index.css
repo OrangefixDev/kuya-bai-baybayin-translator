@@ -535,40 +535,59 @@ span.footer-text {
   color: #6A6A6A
 }
 
-/* About us */
-details {
-  user-select: none;
+
+/* about us */
+#tooltip {
+  background: #6b6e6d;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
 }
 
-details > summary span.icon {
-  transition: all 0.3s;
+
+
+#arrow,
+#arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
 }
 
-details[open] summary span.icon {
-  transform: rotate(180deg);
+#arrow {
+  visibility: hidden;
 }
 
-
-summary > * {
-display: inline;
+#arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
 }
 
-.summary_details {
-  padding-top: 1em;
-  margin: 0;
+#tooltip[data-popper-placement^='top'] > #arrow {
+  bottom: -4px;
 }
 
-summary {
-  list-style-type: none; /* Firefox */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25em;
-  border: none;
-  cursor: pointer;
+#tooltip[data-popper-placement^='bottom'] > #arrow {
+  top: -4px;
 }
 
-summary::-webkit-details-marker {
+#tooltip[data-popper-placement^='left'] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^='right'] > #arrow {
+  left: -4px;
+}
+
+#tooltip {
+  /* ... */
   display: none;
+}
+
+#tooltip[data-show] {
+  display: block;
 }
 /* about us */
