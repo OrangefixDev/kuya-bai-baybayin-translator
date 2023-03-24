@@ -146,7 +146,7 @@ function convert(){
     ctx.font = '3em Baybayin';
     ctx.fillText(transtext.value, x, y);
 
-    ctx.font = '1em Arial';
+    ctx.font = '1em Lexend Deca';
     ctx.fillText(rawtext.value, x, y+20);
   }
   img.src = "../assets/images/share-sample.png";
