@@ -127,14 +127,31 @@ function convertText() {
 }
 
 function convert(){
-  let text = document.getElementById('translatedTextArea')
-  const image = document.getElementById('image')
-  const ctx = canvas.getContext('2d')
-  ctx.canvas.width = ctx.measureText(text.value).width
-  ctx.font = '30px Baybayin';
-  ctx.fillText(text.value,0,30)
-  let dataURL = canvas.toDataURL()
-  image.src = dataURL
+  let rawtext = document.getElementById('tagalogTextArea');
+  let transtext = document.getElementById('translatedTextArea');
+  //const image = document.getElementById('image');
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var x = canvas.width / 2;
+  var y = canvas.height / 2;
+  ctx.textAlign = 'center';
+  var img = new Image();
+  img.onload = function(){
+    let scale = Math.min(canvas.width/img.width, canvas.height/img.height);
+    let neww = img.width * scale;
+    let newh = img.height * scale;
+
+    ctx.drawImage(img, 0, 0, neww, newh);
+
+    ctx.font = '3em Baybayin';
+    ctx.fillText(transtext.value, x, y);
+
+    ctx.font = '1em Arial';
+    ctx.fillText(rawtext.value, x, y+20);
+  }
+  img.src = "../assets/images/share-sample.png";
+  //let dataURL = canvas.toDataURL()
+  //image.src = dataURL
 }
 
 // action listen for the share button
