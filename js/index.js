@@ -132,22 +132,21 @@ function convert(){
   //const image = document.getElementById('image');
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
-  var x = canvas.width / 2;
-  var y = canvas.height / 2;
-  ctx.textAlign = 'center';
   var img = new Image();
   img.onload = function(){
     let scale = Math.min(canvas.width/img.width, canvas.height/img.height);
-    let neww = img.width * scale;
-    let newh = img.height * scale;
+    var x = img.width / 2;
+    var y = img.height / 2;
 
-    ctx.drawImage(img, 0, 0, neww, newh);
+    ctx.scale(scale, scale);
+    ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    ctx.font = '3em Baybayin';
+    ctx.textAlign = 'center';
+    ctx.font = '12em Baybayin';
     ctx.fillText(transtext.value, x, y);
 
-    ctx.font = '1em Lexend Deca';
-    ctx.fillText(rawtext.value, x, y+20);
+    ctx.font = '4em Lexend Deca';
+    ctx.fillText(rawtext.value, x, y+80);
   }
   img.src = "../assets/images/share-sample.png";
   //let dataURL = canvas.toDataURL()
