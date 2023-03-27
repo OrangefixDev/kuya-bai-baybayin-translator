@@ -126,12 +126,17 @@ function convertText() {
 
 }
 
+//var updater = 0;
+
 function convert(){
   let rawtext = document.getElementById('tagalogTextArea');
   let transtext = document.getElementById('translatedTextArea');
   //const image = document.getElementById('image');
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
+
+  ctx.reset();
+
   var img = new Image();
   img.onload = function(){
     let scale = Math.min(canvas.width/img.width, canvas.height/img.height);
@@ -147,29 +152,16 @@ function convert(){
 
     ctx.font = '4em Lexend Deca';
     ctx.fillText(rawtext.value, x, y+80);
+
+    //var anchor = document.createElement("a");
+    ///anchor.href = canvas.toDataURL("image/png");
+    //anchor.download = "image.hpng";
+    //anchor.click();
   }
   img.src = "../assets/images/share-sample.png";
-  //let dataURL = canvas.toDataURL()
-  //image.src = dataURL
 }
 
-// action listen for the share button
-//const shareBtn = document.querySelector('.share-btn'); //document.getElementById('share-btn');
-//const shareOptions = document.querySelector('.share-options'); //document.getElementById('share-options');
-
-/*
-const shareBtn = document.getElementById('.share-btn');
-const shareOptions = document.getElementById('.share-options');
-
-
-console.log(shareBtn);
-console.log(shareOptions);
-
-shareBtn.addEventListener('click', () => {
-    shareOptions.classList.toggle('active');
-    console.log('btn clicked');
-})*/
-
+// Action listeners for the share button
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('share-btn');
   const shareOptions = document.querySelector('.share-options');
@@ -197,8 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener(event, hide);
   });
 
-  //const btn = document.getElementById('share-btn');
-  //const shareOptions = document.querySelector('.share-options');
   console.log(btn);
 
   btn.addEventListener('click', () => {
