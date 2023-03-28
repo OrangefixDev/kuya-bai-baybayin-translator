@@ -129,8 +129,8 @@ function convertText() {
 //var updater = 0;
 
 function convert(){
-  let rawtext = document.getElementById('tagalogTextArea');
-  let transtext = document.getElementById('translatedTextArea');
+  let rawtext = document.getElementById('tagalogTextArea').value;
+  let transtext = document.getElementById('translatedTextArea').value;
   //const image = document.getElementById('image');
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
@@ -138,20 +138,53 @@ function convert(){
   ctx.reset();
 
   var img = new Image();
-  img.onload = function(){
+  img.onload = function() {
     let scale = Math.min(canvas.width/img.width, canvas.height/img.height);
-    var x = img.width / 2;
-    var y = img.height / 2;
 
     ctx.scale(scale, scale);
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
     ctx.textAlign = 'center';
+    var ctr = 0;
+    var ttext = [];
+    var rtext = [];
+
+    var ttemp = transtext.split("\n");
+    console.log(ttemp);
+    for (var i = 0; i < ttemp.length; i++) {
+      var temp = getLines(ctx, ttemp[i], canvas.width);
+      temp.forEach((element) => { ttext.push(element); });
+    }
+
+    var rtemp = rawtext.split("\n");
+    for (var j = 0; j < rtemp.length; j++) {
+      var temp = getLines(ctx, rtemp[j], canvas.width);
+      temp.forEach((element) => { rtext.push(element); });
+    }
+
+    var a = ttext.length;
+    var b = rtext.length;
+    var textHeight = 160*a + 80*b;
+    var x = img.width / 2;
+    var y = (img.height / 2) - (textHeight / 2) - 80;
+
     ctx.font = '12em Baybayin';
-    ctx.fillText(transtext.value, x, y);
+    for (var k = 0; k < a; k++) {
+      ctr += 160;
+      ctx.fillText(ttext[k], x, y+ctr);
+    }
 
     ctx.font = '4em Lexend Deca';
-    ctx.fillText(rawtext.value, x, y+80);
+    for (var l = 0; l < b; l++) {
+      ctr += 80;
+      ctx.fillText(rtext[l], x, y+ctr);
+    }
+    
+    //ctx.font = '12em Baybayin';
+    //ctx.fillText(transtext.value, x, y);
+
+    //ctx.font = '4em Lexend Deca';
+    //ctx.fillText(rawtext.value, x, y+80);
 
     //var anchor = document.createElement("a");
     ///anchor.href = canvas.toDataURL("image/png");
@@ -159,6 +192,24 @@ function convert(){
     //anchor.click();
   }
   img.src = "../assets/images/share-sample.png";
+}
+
+function getLines(ctx, text, maxWidth) {
+  var words = text.split(" ");
+  var lines = [];
+  var currentLine = words[0];
+
+  for (var i = 1; i < words.length; i++) {
+    var word = words[i];
+    var width = ctx.measureText(currentLine + " " + word).width;
+    if (width < maxWidth) currentLine += " " + word;
+    else {
+      lines.push(currentLine);
+      currentLine = word;
+    }
+  }
+  lines.push(currentLine);
+  return lines;
 }
 
 // Action listeners for the share button
