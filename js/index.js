@@ -144,21 +144,23 @@ function convert(){
     ctx.scale(scale, scale);
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
+    let tscale = 240/11;
+    let rscale = 80/11;
+
     ctx.textAlign = 'center';
     var ctr = 0;
     var ttext = [];
     var rtext = [];
 
     var ttemp = transtext.split("\n");
-    console.log(ttemp);
     for (var i = 0; i < ttemp.length; i++) {
-      var temp = getLines(ctx, ttemp[i], canvas.width);
+      var temp = getLines(ctx, ttemp[i], img.width/tscale);
       temp.forEach((element) => { ttext.push(element); });
     }
 
     var rtemp = rawtext.split("\n");
     for (var j = 0; j < rtemp.length; j++) {
-      var temp = getLines(ctx, rtemp[j], canvas.width);
+      var temp = getLines(ctx, rtemp[j], img.width/rscale);
       temp.forEach((element) => { rtext.push(element); });
     }
 
@@ -179,12 +181,6 @@ function convert(){
       ctr += 80;
       ctx.fillText(rtext[l], x, y+ctr);
     }
-    
-    //ctx.font = '12em Baybayin';
-    //ctx.fillText(transtext.value, x, y);
-
-    //ctx.font = '4em Lexend Deca';
-    //ctx.fillText(rawtext.value, x, y+80);
 
     //var anchor = document.createElement("a");
     ///anchor.href = canvas.toDataURL("image/png");
@@ -202,6 +198,7 @@ function getLines(ctx, text, maxWidth) {
   for (var i = 1; i < words.length; i++) {
     var word = words[i];
     var width = ctx.measureText(currentLine + " " + word).width;
+    console.log(width);
     if (width < maxWidth) currentLine += " " + word;
     else {
       lines.push(currentLine);
