@@ -535,16 +535,31 @@ order: 3;
 
 
 span.footer-text {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #6A6A6A
 }
 
 /* New About us */
 .card{
-  width: 20rem;
+  width: 40rem;
   background-color: var(--accent);
-  color: #fc0000;
-  margin: 2rem auto;
+  color: #000000;
+  margin: -3rem auto;
+}
+
+.card-holder{
+  width: 40rem;
+  background-color: var(--accent);
+  color: #6A6A6A;
+  margin: -3.1rem auto;
+}
+
+.TContainer{
+  border: 1px var(--gray);
+  border-radius: 10px;
+  width: 30rem;
+  margin: -1rem auto;
+  background-color: #f5f5f5;
 }
 
 .card__name{
@@ -556,12 +571,12 @@ span.footer-text {
 }
 
 h1{
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
+  margin-bottom: 0rem;
+  letter-spacing: 0px;
 }
 
 p{
-  font-size: 0.8em;
+  font-size: 1em;
   margin-bottom: 1rem;
 }
 
@@ -575,13 +590,13 @@ p{
 .card__read-more--open{
   display: block;
   opacity: 1;
-  height: 5rem;
+  height: 9rem;
 }
 
 .read-more-btnn{
   display: inline-block;
   color: var(--accent);
-  background-color: #eee;
+  background-color: #ffffff;
   padding: 0.6rem 1.5rem;
   font-size: 1em;
   position: relative;
@@ -591,7 +606,7 @@ p{
 }
 
 .read-more-btnn:hover{
-  background-color: #fff;
+  background-color: #48d15b;
   box-shadow: 0 0 2rem rgba(0,0,0,0.1);
   transform: translateY(-3px);
 }

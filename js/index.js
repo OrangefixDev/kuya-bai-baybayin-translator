@@ -240,17 +240,17 @@ const cardHolder = document.querySelector('.card-holder');
 cardHolder.addEventListener('click', e => {
 
         const current = e.target;
-
         const isReadMoreBtnn = current.className.includes('read-more-btnn');
 
         if (!isReadMoreBtnn)
             return;
 
         const currentText = e.target.parentNode.querySelector('.card__read-more');
-
         currentText.classList.toggle('card__read-more--open');
 
-        current.textContent = current.textContent.includes('Read More...');
+        document.querySelector('.TContainer').style.borderStyle = "solid";
+        document.querySelector('.TContainer').style.borderColor = "red";
+
 
     });
 
