@@ -236,23 +236,34 @@ document.addEventListener('DOMContentLoaded', () => {
 const btnn = document.querySelector('.read-more-btnn');
 const text = document.querySelector('.card__read-more');
 const cardHolder = document.querySelector('.card-holder');
+var isOpen = false;
 
 cardHolder.addEventListener('click', e => {
+  const current = e.target;
+  const isReadMoreBtnn = current.className.includes('read-more-btnn');
 
-        const current = e.target;
-        const isReadMoreBtnn = current.className.includes('read-more-btnn');
+  //if (!isReadMoreBtnn)
+  //  return;
+  if(!isOpen)
+  {
+    document.querySelector('.TContainer').style.borderStyle = "solid";
+    document.querySelector('.TContainer').style.borderColor = "#CDD8DB";
+    isOpen = true;
+  }
 
-        if (!isReadMoreBtnn)
-            return;
+  else
+  {
+    document.querySelector('.TContainer').style.borderStyle = "none";
+    isOpen = false;
+  }
 
-        const currentText = e.target.parentNode.querySelector('.card__read-more');
-        currentText.classList.toggle('card__read-more--open');
+  const currentText = e.target.parentNode.querySelector('.card__read-more');
+  currentText.classList.toggle('card__read-more--open');
 
-        document.querySelector('.TContainer').style.borderStyle = "solid";
-        document.querySelector('.TContainer').style.borderColor = "red";
+  //document.querySelector('.TContainer').style.borderStyle = "solid";
+  //document.querySelector('.TContainer').style.borderColor = "red";
 
-
-    });
+});
 
   console.log(btn);
 
