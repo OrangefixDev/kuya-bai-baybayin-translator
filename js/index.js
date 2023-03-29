@@ -257,19 +257,6 @@ cardHolder.addEventListener('click', e => {
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   console.log(btn);
 
   btn.addEventListener('click', () => {

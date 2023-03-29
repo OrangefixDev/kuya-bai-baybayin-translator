@@ -528,6 +528,10 @@ order: 3;
     margin: 10px;
   }
 }
+.orangefix-logo{
+  height: 0.85em;
+  padding-bottom: 0px;
+}
 
 
 span.footer-text {
