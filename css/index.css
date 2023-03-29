@@ -213,6 +213,10 @@ button:hover {
   z-index: 2;
 }*/
 
+#preview
+{
+  border-style: none;
+}
 
 .share-options{
   /*opacity:1;*/
