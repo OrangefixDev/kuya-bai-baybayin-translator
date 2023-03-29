@@ -217,29 +217,65 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('share-btn');
   const shareOptions = document.querySelector('.share-options');
 
-  function show() {
-    tooltip.setAttribute('data-show', '');
+  // function show() {
+  //   tooltip.setAttribute('data-show', '');  
+  //   popperInstance.update();
+  // }
   
-    // We need to tell Popper to update the tooltip position
-    // after we show the tooltip, otherwise it will be incorrect
-    popperInstance.update();
-  }
+  // function hide() {
+  //   tooltip.removeAttribute('data-show');
+  // }
   
-  function hide() {
-    tooltip.removeAttribute('data-show');
-  }
+  // const showEvents = ['mouseenter', 'focus'];
+  // const hideEvents = ['mouseleave', 'blur'];
   
-  const showEvents = ['mouseenter', 'focus'];
-  const hideEvents = ['mouseleave', 'blur'];
+  // showEvents.forEach((event) => {
+  //   button.addEventListener(event, show);
+  // });
   
-  showEvents.forEach((event) => {
-    button.addEventListener(event, show);
-  });
-  
-  hideEvents.forEach((event) => {
-    button.addEventListener(event, hide);
-  });
+  // hideEvents.forEach((event) => {
+  //   button.addEventListener(event, hide);
+  // });
 
+  const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+const main_popup = document.querySelector('.main-popup');
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+    main_popup.style.cssText = 'animation:slide-in .5s ease; animation-fill-mode: forwards;';
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)  
+  })
+  main_popup.style.cssText = 'animation:slide-out .5s ease; animation-fill-mode: forwards;';
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
   console.log(btn);
 
   btn.addEventListener('click', () => {
