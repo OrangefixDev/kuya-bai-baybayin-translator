@@ -236,46 +236,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // hideEvents.forEach((event) => {
   //   button.addEventListener(event, hide);
   // });
+const btnn = document.querySelector('.read-more-btnn');
+const text = document.querySelector('.card__read-more');
+const cardHolder = document.querySelector('.card-holder');
 
-  const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
-const main_popup = document.querySelector('.main-popup');
+cardHolder.addEventListener('click', e => {
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-    main_popup.style.cssText = 'animation:slide-in .5s ease; animation-fill-mode: forwards;';
-  })
-})
+        const current = e.target;
 
-overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)  
-  })
-  main_popup.style.cssText = 'animation:slide-out .5s ease; animation-fill-mode: forwards;';
-})
+        const isReadMoreBtnn = current.className.includes('read-more-btnn');
 
-closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-  })
-})
+        if (!isReadMoreBtnn)
+            return;
 
-function openModal(modal) {
-  if (modal == null) return
-  modal.classList.add('active')
-  overlay.classList.add('active')
-}
+        const currentText = e.target.parentNode.querySelector('.card__read-more');
 
-function closeModal(modal) {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
-}
+        currentText.classList.toggle('card__read-more--open');
+
+        current.textContent = current.textContent.includes('Read More...');
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   console.log(btn);
 
   btn.addEventListener('click', () => {

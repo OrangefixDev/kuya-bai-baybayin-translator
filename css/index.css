@@ -535,125 +535,63 @@ span.footer-text {
   color: #6A6A6A
 }
 
-
-/* about us */
-/* #tooltip {
-  background: #6b6e6d;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  padding: 4px 8px;
-  font-size: 13px;
-  border-radius: 4px;
+/* New About us */
+.card{
+  width: 20rem;
+  background-color: var(--accent);
+  color: #fc0000;
+  margin: 2rem auto;
 }
 
-#arrow,
-#arrow::before {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: inherit;
+.card__name{
+  font-size: 1.7em;
 }
 
-#arrow {
-  visibility: hidden;
+.card-contents{
+  padding: 1rem;
 }
 
-#arrow::before {
-  visibility: visible;
-  content: '';
-  transform: rotate(45deg);
+h1{
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
-#tooltip[data-popper-placement^='top'] > #arrow {
-  bottom: -4px;
+p{
+  font-size: 0.8em;
+  margin-bottom: 1rem;
 }
 
-#tooltip[data-popper-placement^='bottom'] > #arrow {
-  top: -4px;
-}
-
-#tooltip[data-popper-placement^='left'] > #arrow {
-  right: -4px;
-}
-
-#tooltip[data-popper-placement^='right'] > #arrow {
-  left: -4px;
-}
-
-#tooltip {
-  display: none;
-}
-
-#tooltip[data-show] {
+.card__read-more{
   display: block;
-} */
-
-/* about us */
-
-
-/* New About us */
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
-  border: 1px solid black;
-  border-radius: 10px;
-  z-index: 10;
-  background-color: white;
-  width: 500px;
-  max-width: 80%;
-}
-
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-
-.modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-body {
-  padding: 10px 15px;
-}
-
-#overlay {
-  position: fixed;
   opacity: 0;
-  transition: 200ms ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
-  pointer-events: none;
+  height: 0;
+  transition: all 0.5s;
 }
 
-#overlay.active {
+.card__read-more--open{
+  display: block;
   opacity: 1;
-  pointer-events: all;
+  height: 5rem;
 }
-/* New About us */
+
+.read-more-btnn{
+  display: inline-block;
+  color: var(--accent);
+  background-color: #eee;
+  padding: 0.6rem 1.5rem;
+  font-size: 1em;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.read-more-btnn:hover{
+  background-color: #fff;
+  box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+
+
+
