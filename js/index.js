@@ -181,11 +181,64 @@ function convert(){
       ctr += 80;
       ctx.fillText(rtext[l], x, y+ctr);
     }
+  }
+  img.src = "../assets/images/share-sample.png";
+}
 
-    //var anchor = document.createElement("a");
-    ///anchor.href = canvas.toDataURL("image/png");
-    //anchor.download = "image.hpng";
-    //anchor.click();
+function downloadCanvas(){
+  var canvas = document.getElementById('canvas-hidden');
+  const ctx = canvas.getContext("2d");
+  let rawtext = document.getElementById('tagalogTextArea').value;
+  let transtext = document.getElementById('translatedTextArea').value;
+
+  ctx.reset();
+
+  var img = new Image();
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0, img.width, img.height);
+
+    let tscale = 240/11;
+    let rscale = 80/11;
+
+    ctx.textAlign = 'center';
+    var ctr = 0;
+    var ttext = [];
+    var rtext = [];
+
+    var ttemp = transtext.split("\n");
+    for (var i = 0; i < ttemp.length; i++) {
+      var temp = getLines(ctx, ttemp[i], img.width/tscale);
+      temp.forEach((element) => { ttext.push(element); });
+    }
+
+    var rtemp = rawtext.split("\n");
+    for (var j = 0; j < rtemp.length; j++) {
+      var temp = getLines(ctx, rtemp[j], img.width/rscale);
+      temp.forEach((element) => { rtext.push(element); });
+    }
+
+    var a = ttext.length;
+    var b = rtext.length;
+    var textHeight = 160*a + 80*b;
+    var x = img.width / 2;
+    var y = (img.height / 2) - (textHeight / 2) - 80;
+
+    ctx.font = '12em Baybayin';
+    for (var k = 0; k < a; k++) {
+      ctr += 160;
+      ctx.fillText(ttext[k], x, y+ctr);
+    }
+
+    ctx.font = '4em Lexend Deca';
+    for (var l = 0; l < b; l++) {
+      ctr += 80;
+      ctx.fillText(rtext[l], x, y+ctr);
+    }
+
+    var anchor = document.createElement("a");
+    anchor.href = canvas.toDataURL("image/png");
+    anchor.download = "image.png";
+    anchor.click();
   }
   img.src = "../assets/images/share-sample.png";
 }

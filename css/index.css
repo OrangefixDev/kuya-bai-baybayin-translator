@@ -325,10 +325,16 @@ button:hover {
 }
 
 
+/* Canvas CSS */
+#preview-hidden{
+  display: none;
+}
 
 
-
-
+#preview{
+  display: flex;
+  justify-content: center;
+}
 
 
 
