@@ -286,37 +286,77 @@ document.addEventListener('DOMContentLoaded', () => {
   // hideEvents.forEach((event) => {
   //   button.addEventListener(event, hide);
   // });
-const btnn = document.querySelector('.read-more-btnn');
-const text = document.querySelector('.card__read-more');
-const cardHolder = document.querySelector('.card-holder');
-var isOpen = false;
+  
+// const btnn = document.querySelector('.read-more-btnn');
+// const text = document.querySelector('.card__read-more');
+// const cardHolder = document.querySelector('.card-holder');
+// var isOpen = false;
 
-cardHolder.addEventListener('click', e => {
-  const current = e.target;
-  const isReadMoreBtnn = current.className.includes('read-more-btnn');
+// cardHolder.addEventListener('click', e => {
+//   const current = e.target;
+//   const isReadMoreBtnn = current.className.includes('read-more-btnn');
 
-  //if (!isReadMoreBtnn)
-  //  return;
-  if(!isOpen)
-  {
-    document.querySelector('.TContainer').style.borderStyle = "solid";
-    document.querySelector('.TContainer').style.borderColor = "#CDD8DB";
-    isOpen = true;
-  }
+//   //if (!isReadMoreBtnn)
+//   //  return;
+//   if(!isOpen)
+//   {
+//     document.querySelector('.TContainer').style.borderStyle = "solid";
+//     document.querySelector('.TContainer').style.borderColor = "#CDD8DB";
+//     isOpen = true;
+//   }
 
-  else
-  {
-    document.querySelector('.TContainer').style.borderStyle = "none";
-    isOpen = false;
-  }
+//   else
+//   {
+//     document.querySelector('.TContainer').style.borderStyle = "none";
+//     isOpen = false;
+//   }
 
-  const currentText = e.target.parentNode.querySelector('.card__read-more');
-  currentText.classList.toggle('card__read-more--open');
+//   const currentText = e.target.parentNode.querySelector('.card__read-more');
+//   currentText.classList.toggle('card__read-more--open');
 
-  //document.querySelector('.TContainer').style.borderStyle = "solid";
-  //document.querySelector('.TContainer').style.borderColor = "red";
+//   //document.querySelector('.TContainer').style.borderStyle = "solid";
+//   //document.querySelector('.TContainer').style.borderColor = "red";
 
-});
+// });
+
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
+
 
   console.log(btn);
 
