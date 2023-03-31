@@ -199,18 +199,17 @@ button:hover {
 }
 
 /* CSS of Share Functionality */
-/*#share-btn{
-  position: absolute;
-  position: relative;
-  border: none;
-  background: #fff;
-  color: #ff7d7d;
-  font-size: 30px;
-  padding-top: 2.5px;
-  padding-right: 3px;
+#share-btn{
+  background-color: var(--light-green);
+  color: #ffffff;
   cursor: pointer;
-  z-index: 2;
-}*/
+}
+
+#down-btn{
+  background-color: var(--light-green);
+  color: #ffffff;
+  cursor: pointer;
+}
 
 #preview
 {
@@ -238,6 +237,34 @@ button:hover {
   transition: .5s;
   transition-delay: .5s;;
   z-index: 1;
+}
+
+.down-options{
+  /*opacity:1;*/
+  position: absolute;
+  bottom: 41.5%;
+  left: 61.5%;
+  /*width: 25px;
+  height: 25px;*/
+  width: auto;
+  height: auto;
+  transform: scale(0);
+  transform-origin: bottom left;
+  /*transform: scale(3.5);*/
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: rgba(15, 15, 15, 0.5);
+  color: #fff;
+  padding: 20px;
+  font-family: 'roboto';
+  transition: .5s;
+  transition-delay: .5s;;
+  z-index: 1;
+}
+
+.down-options.active{
+  transform: scale(3.7);
+  transition-delay: 0s;
 }
 
 .share-options.active{
@@ -499,6 +526,7 @@ order: 3;
   .translator-main-blocks-translated,
   .translator-main-blocks-raw {
     flex: 0 0 40vh;
+    color: #42210B;
   }
   .translator-main-blocks > * {
     border: none;
@@ -571,6 +599,10 @@ span.footer-text {
   max-width: 80%;
 }
 
+.filter-brown{
+  filter: invert(12%) sepia(15%) saturate(5058%) hue-rotate(356deg) brightness(93%) contrast(93%);
+}
+
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
 }
@@ -589,13 +621,15 @@ span.footer-text {
   font-size: 1.25rem;
   font-weight: bold;
   text-align: center;
+  color:#42210B;
 }
 
 .modal-header .close-button {
   cursor: pointer;
+  color: white;
   border: none;
   outline: none;
-  background: none;
+  background: lightgreen;
   font-size: 1.25rem;
   font-weight: bold; 
   margin-left: 90px;

@@ -264,8 +264,8 @@ function getLines(ctx, text, maxWidth) {
 
 // Action listeners for the share button
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('share-btn');
-  const shareOptions = document.querySelector('.share-options');
+  const btn = document.getElementById('down-btn');
+  const shareOptions = document.querySelector('.down-options');
 
   // function show() {
   //   tooltip.setAttribute('data-show', '');  
@@ -360,9 +360,10 @@ function closeModal(modal) {
 
   console.log(btn);
 
-  btn.addEventListener('click', () => {
-    shareOptions.classList.toggle('active');
-    console.log('btn clicked');
-  });
-});
+  // btn.addEventListener('click', () => {
+  //   shareOptions.classList.toggle('active');
+  //   console.log('btn clicked');
+  // });
+}
+);
 

@@ -86,7 +86,7 @@
           </div>
       </div> -->
       
-      <div data-modal-target="#modal" style="cursor: pointer" ><img src="/assets/images/Info_button.svg" color="#5bbad5" height="20px" width="50px"></div>
+      <div data-modal-target="#modal" style="cursor: pointer" ><img src="/assets/images/Info_button.svg" height="20px" width="50px" class="filter-brown"></div>
       <div class="modal" id="modal">
         <div class="modal-header">
           <img class="kuyabai-logo" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="orangefix logo">
@@ -100,19 +100,12 @@
           <span>Use the translator to learn how to write & spell Baybayin.</span><br>  
           <br>
           <span>If you have questions, buzz us at hello (at) orangefix.xyz.</span>
-          <br><br>
-              <!-- <span> Let Kuya Bai help you learn Baybayin,</span><br> 
-              <span> our very own ancient Tagalog script.</span><br>
-              <br>
-              <span>Use the translator to know how to write & spell Baybayin.</span><br> 
-              <span>If you have questions, buzz us at hello(at)orangefix.xyz</span><br>
-              <br> -->
-        </div>
+           <br><br>
+                </div>
       </div>
       <div id="overlay"></div>
-      
-
 <!--About us --->
+
       </div>
       <!-- Navigation / Header End -->
    
@@ -143,7 +136,7 @@
 
           <!-- Translated  Text Area -->
           <div class="translator-main-blocks-translated border-bottom">
-            <label for="translatedTextArea">Baybayin Translation</label>
+            <label for="translatedTextArea" color="#42210B">Baybayin Translation</label>
 
             <textarea
               name="translated-text-area"
@@ -171,14 +164,15 @@
 
           <!-- Button for Share -->
           <button 
-            id = "share-btn" 
-            class= "share-btn"
+            id = "down-btn" 
+            class= "down-btn"
             href=#
             onclick="downloadCanvas()"
-            hover="share-options"
+            hover="down-options"
             style="cursor: pointer">
               <!-- <i class="fas fa-share-alt"></i>  -->
-              <i class="fa fa-download" aria-hidden="true">  </i>
+              <!-- <i class="fa fa-download" aria-hidden="true"> </i> -->
+              Downlaod
             </button>
 
             <!-- <div id = "share-btn" class="share-options">                                  
@@ -237,8 +231,7 @@
     </div>
 <!-- TODO: a proper footer -->
     <div class="footer" id="center">
-    
-<!-- about us -->
+
       <br>
       <!-- <img src="assets/images/logo_horizontal.png" height="50px"alt=""> -->
       <span class="footer-text" id="center">Say "Hi" at hello (at) orangefix.xyz</span>
@@ -249,7 +242,7 @@
       <br>
       <span class="footer-text">You can also download the free <a href="https://github.com/jennayey/philippine-scripts-translator/blob/master/assets/fonts/Baybayin/TintangBaybayin.otf?raw=true" target="_blank" rel="noopener noreferrer">Tintang Baybayin Open Type Font</a>.</span>
       <br><br>
-      <span class="footer-text" id="center">Copyright &copy 2022 <a href="https://kuyabai.com" target="_blank" rel="noopener noreferrer">Kuyabai.com</a> / An <a href="https://orangefix.xyz" target="_blank" rel="noopener noreferrer"> <img class="orangefix-logo" style="margin-right: 1px;" src="https://orangefix.xyz/orangefix-logo-svg.svg" alt="orangefix logo"> Orangefix</a> side hustle.</span>
+      <span class="footer-text" id="center">Copyright &copy 2022 <a href="https://kuyabai.com" target="_blank" rel="noopener noreferrer">kuyabai.com</a> / An <a href="https://orangefix.xyz" target="_blank" rel="noopener noreferrer"> <img class="orangefix-logo" style="margin-right: 1px;" src="https://orangefix.xyz/orangefix-logo-svg.svg" alt="orangefix logo">Orangefix</a> side hustle.</span>
       <!-- <a href='https://ko-fi.com/I2I0230S1' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
     </div>
   </body>
