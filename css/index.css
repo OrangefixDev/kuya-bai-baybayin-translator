@@ -541,6 +541,11 @@ order: 3;
   height: 0.85em;
   padding-bottom: 0px;
 }
+.kuyabai-logo{
+  height: 4em;
+  padding-bottom: 0px;
+  margin-left: 100px;
+}
 
 
 span.footer-text {
@@ -573,7 +578,7 @@ span.footer-text {
 .modal-header {
   padding: 10px 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center; 
   align-items: center;
   border-bottom: 1px solid black;
@@ -583,7 +588,7 @@ span.footer-text {
   font-family: "Lexend Deca", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
-  text-align: center; 
+  text-align: center;
 }
 
 .modal-header .close-button {
@@ -592,7 +597,8 @@ span.footer-text {
   outline: none;
   background: none;
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: bold; 
+  margin-left: 90px;
 }
 
 .modal-body {
@@ -608,7 +614,7 @@ span.footer-text {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(228, 224, 224, 0.5);
   pointer-events: none;
 }
 
