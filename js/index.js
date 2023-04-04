@@ -267,58 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('down-btn');
   const shareOptions = document.querySelector('.down-options');
 
-  // function show() {
-  //   tooltip.setAttribute('data-show', '');  
-  //   popperInstance.update();
-  // }
-  
-  // function hide() {
-  //   tooltip.removeAttribute('data-show');
-  // }
-  
-  // const showEvents = ['mouseenter', 'focus'];
-  // const hideEvents = ['mouseleave', 'blur'];
-  
-  // showEvents.forEach((event) => {
-  //   button.addEventListener(event, show);
-  // });
-  
-  // hideEvents.forEach((event) => {
-  //   button.addEventListener(event, hide);
-  // });
-  
-// const btnn = document.querySelector('.read-more-btnn');
-// const text = document.querySelector('.card__read-more');
-// const cardHolder = document.querySelector('.card-holder');
-// var isOpen = false;
-
-// cardHolder.addEventListener('click', e => {
-//   const current = e.target;
-//   const isReadMoreBtnn = current.className.includes('read-more-btnn');
-
-//   //if (!isReadMoreBtnn)
-//   //  return;
-//   if(!isOpen)
-//   {
-//     document.querySelector('.TContainer').style.borderStyle = "solid";
-//     document.querySelector('.TContainer').style.borderColor = "#CDD8DB";
-//     isOpen = true;
-//   }
-
-//   else
-//   {
-//     document.querySelector('.TContainer').style.borderStyle = "none";
-//     isOpen = false;
-//   }
-
-//   const currentText = e.target.parentNode.querySelector('.card__read-more');
-//   currentText.classList.toggle('card__read-more--open');
-
-//   //document.querySelector('.TContainer').style.borderStyle = "solid";
-//   //document.querySelector('.TContainer').style.borderColor = "red";
-
-// });
-
   const openModalButtons = document.querySelectorAll('[data-modal-target]')
   const closeModalButtons = document.querySelectorAll('[data-close-button]')
   const overlay = document.getElementById('overlay')
@@ -355,11 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('active')
     overlay.classList.remove('active')
   }
-
-  // btn.addEventListener('click', () => {
-  //   shareOptions.classList.toggle('active');
-  //   console.log('btn clicked');
-  // });
 
   }
 );
