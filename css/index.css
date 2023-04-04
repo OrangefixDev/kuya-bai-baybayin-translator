@@ -205,15 +205,40 @@ button:hover {
   cursor: pointer;
 }
 
-#down-btn{
+#down-btn, #open-preview{
   background-color: var(--light-green);
   color: #ffffff;
   cursor: pointer;
 }
 
-#preview
-{
-  border-style: none;
+#preview {
+  padding: 1em;
+  width: 532px;
+  height: 532px;
+  max-width: 70vmin;
+  max-height: 70vmin;
+  border: none;
+  text-align: justify;
+}
+
+#preview::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+#close-preview {
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  right: 0;
+  font-weight: bolder;
+  font-size: 1em;
+  margin-right: 16px;
+  position: absolute;
+  cursor: pointer;
+}
+
+#canvas {
+  position: absolute;
 }
 
 .share-options{
@@ -355,13 +380,6 @@ button:hover {
 #preview-hidden{
   display: none;
 }
-
-
-#preview{
-  display: flex;
-  justify-content: center;
-}
-
 
 
 .baybayin {
