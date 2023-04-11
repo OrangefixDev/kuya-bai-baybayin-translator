@@ -215,8 +215,8 @@ button:hover {
   padding: 1em;
   width: 532px;
   height: 532px;
-  max-width: 70vmin;
-  max-height: 70vmin;
+  max-width: 70vmax;
+  max-height: 70vmax;
   border: none;
   text-align: justify;
 }
