@@ -263,10 +263,38 @@ function downloadCanvas() {
 
     var anchor = document.createElement("a");
     anchor.href = canvas.toDataURL("image/png");
-    anchor.download = "image.png";
+    anchor.download = `kuyabai_${getWords(rtext)}_${getNow()}.png`;
     anchor.click();
   }
   img.src = "../assets/images/share-sample.png";
+}
+
+function getWords(array) {
+  var str = "";
+  var temp = array[0];
+  var temp2 = temp.split(" ");
+  str += temp2[0];
+  for (var m = 1; m < temp2.length; m++) str += `-${temp2[m]}`;
+  for (var n = 1; n < array.length; n++) {
+    str += '-';
+    temp = array[n];
+    temp2 = temp.split(" ");
+    str += temp2[0];
+    for (var o = 1; o < temp2.length; o++) str += `-${temp2[o]}`;
+  }
+  return str;
+}
+
+function getNow() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const date = String(now.getDate()).padStart(2, '0');
+  const hour = String(now.getHours()).padStart(2, '0');
+  const minute = String(now.getMinutes()).padStart(2, '0');
+  const second = String(now.getSeconds()).padStart(2, '0');
+
+  return `${year}${month}${date}T${hour}${minute}${second}`;
 }
 
 function getLines(ctx, text, maxWidth) {
