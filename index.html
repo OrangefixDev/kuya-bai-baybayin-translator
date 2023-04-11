@@ -11,7 +11,7 @@
       gtag('config', 'G-ST2JEZKDYS');
     </script>
     <link rel="stylesheet" href="css/index.css" />
-    <script src="js/index.js"></script>
+    <!-- script was here -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700&display=swap");
     </style>
@@ -133,6 +133,7 @@
                 >
                 Copy
             </button>
+            <button id="open-preview" class="open-preview" onclick="convert()" style="cursor: pointer">Preview</button>
             <button 
                 id = "down-btn" 
                 class= "down-btn"
@@ -157,6 +158,10 @@
     <img src="" id="image" alt="">
   </div>
 
+  <dialog id="preview">
+    <canvas id="canvas" height="500" width="500"></canvas>
+    <button id="close-preview" class="close-preview">&times;</button>
+  </dialog>
 
 <!-- TODO: a proper footer -->
     <div class="footer" id="center">
@@ -173,5 +178,6 @@
       <span class="footer-text" id="center">Copyright &copy 2022 <a href="https://kuyabai.com" target="_blank" rel="noopener noreferrer">kuyabai.com</a> / An <a href="https://orangefix.xyz" target="_blank" rel="noopener noreferrer"> <img class="orangefix-logo" style="margin-right: 1px;" src="https://orangefix.xyz/orangefix-logo-svg.svg" alt="orangefix logo">Orangefix</a> side hustle.</span>
       <!-- <a href='https://ko-fi.com/I2I0230S1' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
     </div>
+    <script src="js/index.js"></script>
   </body>
 </html>

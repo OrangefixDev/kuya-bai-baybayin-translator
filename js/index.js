@@ -261,12 +261,10 @@ function downloadCanvas() {
     ctx.font = '4em Lexend Deca';
     for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
 
-    //if (textHeight > 1050) alert('The text may be too long for the image.');
-
-    if (lofctr > 0) {
-      var emptay = lofctr > 1 ? `are ${lofctr} words that exceed` : `is ${lofctr} word that exceeds`
-      alert(`There ${emptay} the width of the image.`);
-    }
+    var anchor = document.createElement("a");
+    anchor.href = canvas.toDataURL("image/png");
+    anchor.download = "image.png";
+    anchor.click();
   }
   img.src = "../assets/images/share-sample.png";
 }
