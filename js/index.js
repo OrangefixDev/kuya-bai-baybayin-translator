@@ -315,7 +315,6 @@ function getLines(ctx, text, maxWidth) {
   return lines;
 }
 
-// Action listeners for the share button
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('down-btn');
   const shareOptions = document.querySelector('.down-options');
@@ -356,8 +355,16 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('active')
     overlay.classList.remove('active')
   }
+  }  
+);
 
-  }
+var contentToToggle = document.querySelector(".social"); 
+
+  document.querySelector(".js-btn-open")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        contentToToggle.classList.toggle("open");
+}
 );
 
 const preview = document.querySelector('#preview');

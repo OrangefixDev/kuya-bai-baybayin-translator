@@ -539,3 +539,76 @@ span.footer-text {
   opacity: 1;
   pointer-events: all;
 }
+
+
+.share {
+  position: absolute;
+  text-align: center;  
+
+
+
+  appearance: auto;
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0em;
+}
+
+#share_amongus{
+  padding: 0 4px;
+}
+
+
+.share .btn {
+  border-radius: 5px;
+  background-color: #74C460;
+  padding: 9px 20px;
+  display: inline-block;
+  transition: all 0.4s linear;
+}
+/* .share .btn:hover {
+  transform: rotate(1deg);
+} */
+.share .btn:hover i {
+  color: #3498db;
+}
+.share .btn i {
+  cursor: pointer;
+  color: #ffffff;
+}
+.share .social.open ul li {
+  padding: 10px;
+  opacity: 1;
+}
+.share .social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.share .social ul li {
+  border-radius: 100%;
+  background-color: #ccc;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0;
+  margin: 5px 0;
+  transition: all 0.4s ease-in-out;
+}
+.share .social ul li:hover {
+  -webkit-box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.5);
+}
+.share .social ul li i {
+  color: #555;
+}

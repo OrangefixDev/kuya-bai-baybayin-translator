@@ -143,6 +143,7 @@
               readonly
               
             ></textarea>
+          <div>
             <button
               id="copyButton"
               onclick="copyText()"
@@ -156,6 +157,7 @@
           <button id="open-preview" class="open-preview" onclick="convert()" style="cursor: pointer">Preview</button>
 
           <!-- Button for Download -->
+          
           <button 
             id = "down-btn"
             href=#
@@ -166,15 +168,24 @@
             Download
           </button>
 
-          <!-- <button 
-          id = "share-btn" 
-          class= "share-btn"
-          hover="share-options"
-          style="cursor: pointer">
-          
-          Share
-        </button> -->
 
+
+          <!-- https://www.youtube.com/watch?v=q-tGimz34Ho&t=392s -->
+
+          <div class="share" id="share_amongus" >
+            <div class="btn js-btn-open">
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+            </div>
+            <div class="social js-btns-share" id="share_amongus">
+              <ul>
+                <li class="js-btns-share"><a href="https://www.facebook.com/sharer.php?u=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="js-btns-share"><a href="https://twitter.com/intent/tweet?via=" + test  target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="js-btns-share"><a href="https://plus.google.com/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
             <!-- <div id = "share-btn" class="share-options">                                  
                 <p class="share-title">share</p>
                   <div id="social-media" class="social-media">
@@ -209,11 +220,11 @@
           });
         </script> -->
 
-      <div id="preview-hidden"> <!-- style="border-style: solid;"> -->
-        <canvas id="canvas-hidden" height="1400" width="1400">
-        </canvas>
-        <img src="" id="image" alt="">
-      </div>
+          <div id="preview-hidden"> <!-- style="border-style: solid;"> -->
+            <canvas id="canvas-hidden" height="1400" width="1400">
+            </canvas>
+            <img src="" id="image" alt="">
+          </div>
 
           <!-- Translated Text Area  End-->
         </div>
