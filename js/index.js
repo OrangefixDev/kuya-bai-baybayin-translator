@@ -196,9 +196,18 @@ function convert(){
       var emptay = lofctr > 1 ? `are ${lofctr} words that exceed` : `is ${lofctr} word that exceeds`
       alert(`There ${emptay} the width of the image.`);
     }
+    const kek = canvas.toDataURL("image/jpeg");
+    console.log(kek); 
+    // console.clear();  
   }
   img.src = "../assets/images/share-sample.png";
 }
+
+function share(){
+  convert();
+}
+
+
 
 function downloadCanvas() {
   var canvas = document.getElementById('canvas-hidden');
@@ -265,9 +274,12 @@ function downloadCanvas() {
     anchor.href = canvas.toDataURL("image/png");
     anchor.download = `kuyabai_${getWords(rtext)}_${getNow()}.png`;
     anchor.click();
-  }
+  }  
   img.src = "../assets/images/share-sample.png";
+  const base64Canvas = canvas.toDataURL("image/jpeg").split(';base64,')[1];
+  console.log(base64Canvas);
 }
+
 
 function getWords(array) {
   var str = "";
@@ -378,3 +390,5 @@ openPreview.addEventListener('click', () => {
 closePreview.addEventListener('click', () => {
     preview.close();
 });
+
+
