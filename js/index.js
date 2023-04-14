@@ -370,15 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }  
 );
 
-var contentToToggle = document.querySelector(".social"); 
-
-  document.querySelector(".js-btn-open")
-      .addEventListener("click", (event) => {
-        event.preventDefault();
-        contentToToggle.classList.toggle("open");
-}
-);
-
 const preview = document.querySelector('#preview');
 const openPreview = document.querySelector('.open-preview');
 const closePreview = document.querySelector('.close-preview');
@@ -391,4 +382,12 @@ closePreview.addEventListener('click', () => {
     preview.close();
 });
 
+var contentToToggle = document.querySelector(".social"); 
+
+  document.querySelector(".js-btn-open")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        contentToToggle.classList.toggle("open");
+}
+);
 
