@@ -40,11 +40,11 @@ function baybayinTranslate() {
   rawText = rawText.replace(/e/g, "i");
   rawText = rawText.replace(/o/g, "u");
 
-  rawText = rawText.replace(/nang/g, "\u1708\u1705\u1714");
-  rawText = rawText.replace(/ning/g, "\u1708\u1712\u1705\u1714");
-  rawText = rawText.replace(/neng/g, "\u1708\u1712\u1705\u1714");
-  rawText = rawText.replace(/nong/g, "\u1708\u1713\u1705\u1714");
-  rawText = rawText.replace(/nung/g, "\u1708\u1713\u1705\u1714");
+  //rawText = rawText.replace(/nang/g, "\u1708\u1705\u1714");
+  //rawText = rawText.replace(/ning/g, "\u1708\u1712\u1705\u1714");
+  //rawText = rawText.replace(/neng/g, "\u1708\u1712\u1705\u1714");
+  //rawText = rawText.replace(/nong/g, "\u1708\u1713\u1705\u1714");
+  //rawText = rawText.replace(/nung/g, "\u1708\u1713\u1705\u1714");
 
 
   rawText = rawText.replace(/nga/g, "\u1705");
@@ -128,158 +128,110 @@ function convertText() {
 
 //var updater = 0;
 
-function convert(){
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+function createImage() {
+  let scale = Math.min(canvas.width/this.width, canvas.height/this.height);
+
+  ctx.scale(scale, scale);
+  ctx.drawImage(this, 0, 0, this.width, this.height);
+
+  ctx.textAlign = 'center';
+  var ttext = [];
+  var rtext = [];
+  var lofctr = 0;
+  var heights = [];
+
+  var ttemp = this.dataset.transtext.split("\n");
+  for (var i = 0; i < ttemp.length; i++) {
+    ctx.font = '12em Baybayin';
+    var temp = getLines(ctx, ttemp[i], this.width);
+    temp.forEach((element) => {
+      var temp2 = ctx.measureText(element);
+      if (temp2.width > this.width) lofctr++;
+      var temp3 = (heights.length-1 < 0) ? 0 : (heights[heights.length-1] + 10);
+      heights.push(temp2.actualBoundingBoxAscent + temp2.actualBoundingBoxDescent + temp3);
+      ttext.push(element);
+    });
+  }
+
+  var rtemp = this.dataset.rawtext.split("\n");
+  for (var j = 0; j < rtemp.length; j++) {
+    ctx.font = '4em Lexend Deca';
+    var temp = getLines(ctx, rtemp[j], this.width);
+    temp.forEach((element) => {
+      var temp2 = ctx.measureText(element);
+      if (temp2.width > this.width) lofctr++;
+      var temp3 = heights[heights.length-1] + 10;
+      heights.push(temp2.fontBoundingBoxAscent + temp2.actualBoundingBoxDescent + temp3);
+      rtext.push(element);
+    });
+  }
+
+  var a = ttext.length;
+  var b = rtext.length;
+
+  var textHeight = heights[heights.length-1];
+
+  var x = this.width / 2;
+  var y = 625 - textHeight / 2;
+
+  ctx.font = '12em Baybayin';
+  for (var k = 0; k < a; k++) ctx.fillText(ttext[k], x, y+heights[k]);
+
+  ctx.font = '4em Lexend Deca';
+  for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
+
+  if (this.dataset.isPreview) {
+    if (lofctr > 0) {
+      var emptay = (lofctr > 1) ? `are ${lofctr} words that exceed` : `is ${lofctr} word that exceeds`
+      alert(`There ${emptay} the width of the image.`);
+    }
+  }
+
+  if (this.dataset.isDownload) {
+    var anchor = document.createElement("a");
+    anchor.href = canvas.toDataURL("image/png");
+    anchor.download = `kuyabai_${getWords(rtext)}_${getNow()}.png`;
+    anchor.click();
+  }
+}
+
+function convert() {
   let rawtext = document.getElementById('tagalogTextArea').value;
   let transtext = document.getElementById('translatedTextArea').value;
   //const image = document.getElementById('image');
-  var canvas = document.getElementById('canvas');
-  var ctx = canvas.getContext('2d');
 
   ctx.reset();
-
+  
   var img = new Image();
-  img.onload = function() {
-    let scale = Math.min(canvas.width/img.width, canvas.height/img.height);
-
-    ctx.scale(scale, scale);
-    ctx.drawImage(img, 0, 0, img.width, img.height);
-
-    ctx.textAlign = 'center';
-    var ttext = [];
-    var rtext = [];
-    var lofctr = 0;
-    var heights = [];
-
-    var ttemp = transtext.split("\n");
-    for (var i = 0; i < ttemp.length; i++) {
-      ctx.font = '12em Baybayin';
-      var temp = getLines(ctx, ttemp[i], img.width);
-      temp.forEach((element, index) => {
-        var temp2 = ctx.measureText(element);
-        if (temp2.width > img.width) lofctr++;
-        var temp3 = (heights.length-1 < 0) ? 0 : (heights[heights.length-1] + 10);
-        heights.push(temp2.actualBoundingBoxAscent + temp2.actualBoundingBoxDescent + temp3);
-        ttext.push(element);
-      });
-    }
-
-    var rtemp = rawtext.split("\n");
-    for (var j = 0; j < rtemp.length; j++) {
-      ctx.font = '4em Lexend Deca';
-      var temp = getLines(ctx, rtemp[j], img.width);
-      temp.forEach((element) => {
-        var temp2 = ctx.measureText(element);
-        if (temp2.width > img.width) lofctr++;
-        var temp3 = heights[heights.length-1] + 10;
-        heights.push(temp2.fontBoundingBoxAscent + temp2.actualBoundingBoxDescent + temp3);
-        rtext.push(element);
-      });
-    }
-
-    var a = ttext.length;
-    var b = rtext.length;
-
-    var textHeight = heights[heights.length-1];
-
-    var x = img.width / 2;
-    var y = 625 - textHeight / 2;
-
-    ctx.font = '12em Baybayin';
-    for (var k = 0; k < a; k++) ctx.fillText(ttext[k], x, y+heights[k]);
-
-    ctx.font = '4em Lexend Deca';
-    for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
-
-    //if (textHeight > 1050) alert('The text may be too long for the image.');
-
-    if (lofctr > 0) {
-      var emptay = lofctr > 1 ? `are ${lofctr} words that exceed` : `is ${lofctr} word that exceeds`
-      alert(`There ${emptay} the width of the image.`);
-    }
-    const kek = canvas.toDataURL("image/jpeg");
-    console.log(kek); 
-    // console.clear();  
-  }
-  img.src = "../assets/images/share-sample.png";
+  img.dataset.transtext = transtext;
+  img.dataset.rawtext = rawtext;
+  img.dataset.isPreview = true;
+  img.onload = createImage;
+  img.src = "/assets/images/share-sample.png";
 }
 
 function share(){
   convert();
 }
 
-
-
 function downloadCanvas() {
-  var canvas = document.getElementById('canvas-hidden');
-  const ctx = canvas.getContext("2d");
   let rawtext = document.getElementById('tagalogTextArea').value;
   let transtext = document.getElementById('translatedTextArea').value;
 
   ctx.reset();
 
   var img = new Image();
-  img.onload = function() {
-    let scale = Math.min(canvas.width/img.width, canvas.height/img.height);
-
-    ctx.scale(scale, scale);
-    ctx.drawImage(img, 0, 0, img.width, img.height);
-
-    ctx.textAlign = 'center';
-    var ttext = [];
-    var rtext = [];
-    var lofctr = 0;
-    var heights = [];
-
-    var ttemp = transtext.split("\n");
-    for (var i = 0; i < ttemp.length; i++) {
-      ctx.font = '12em Baybayin';
-      var temp = getLines(ctx, ttemp[i], img.width);
-      temp.forEach((element, index) => {
-        var temp2 = ctx.measureText(element);
-        if (temp2.width > img.width) lofctr++;
-        var temp3 = (heights.length-1 < 0) ? 0 : (heights[heights.length-1] + 10);
-        heights.push(temp2.actualBoundingBoxAscent + temp2.actualBoundingBoxDescent + temp3);
-        ttext.push(element);
-      });
-    }
-
-    var rtemp = rawtext.split("\n");
-    for (var j = 0; j < rtemp.length; j++) {
-      ctx.font = '4em Lexend Deca';
-      var temp = getLines(ctx, rtemp[j], img.width);
-      temp.forEach((element) => {
-        var temp2 = ctx.measureText(element);
-        if (temp2.width > img.width) lofctr++;
-        var temp3 = heights[heights.length-1] + 10;
-        heights.push(temp2.fontBoundingBoxAscent + temp2.actualBoundingBoxDescent + temp3);
-        rtext.push(element);
-      });
-    }
-
-    var a = ttext.length;
-    var b = rtext.length;
-
-    var textHeight = heights[heights.length-1];
-
-    var x = img.width / 2;
-    var y = 625 - textHeight / 2;
-
-    ctx.font = '12em Baybayin';
-    for (var k = 0; k < a; k++) ctx.fillText(ttext[k], x, y+heights[k]);
-
-    ctx.font = '4em Lexend Deca';
-    for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
-
-    var anchor = document.createElement("a");
-    anchor.href = canvas.toDataURL("image/png");
-    anchor.download = `kuyabai_${getWords(rtext)}_${getNow()}.png`;
-    anchor.click();
-  }  
+  img.dataset.transtext = transtext;
+  img.dataset.rawtext = rawtext;
+  img.dataset.isDownload = true;
+  img.onload = createImage;
   img.src = "../assets/images/share-sample.png";
   const base64Canvas = canvas.toDataURL("image/jpeg").split(';base64,')[1];
   console.log(base64Canvas);
 }
-
 
 function getWords(array) {
   var str = "";
