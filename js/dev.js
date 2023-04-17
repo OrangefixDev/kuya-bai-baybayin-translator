@@ -343,3 +343,26 @@ var contentToToggle = document.querySelector(".social");
 }
 );
 
+  function sharefbimage() 
+  {
+    FB.init({ appId: `your appid`, status: true, cookie: true });
+    FB.ui(
+    {
+        method: `share`,
+        name: 'Facebook Dialogs',
+        href: $(location).attr('href'),
+        link: 'https://developers.facebook.com/docs/dialogs/',
+        picture: 'https://cdn.discordapp.com/attachments/1077876518191104000/1097367064366284800/341074544_744084537423397_8765253421734151781_n.png',
+        caption: 'Ishelf Book',
+        description: 'your description'
+    },
+    function (response) {
+        if (response && response.post_id) {
+            alert('success');
+        } 
+        else {
+            alert('error');
+        }
+    }
+    )
+  };

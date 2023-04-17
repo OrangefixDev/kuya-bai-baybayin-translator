@@ -14,6 +14,28 @@
   
       gtag('config', 'G-ST2JEZKDYS');
     </script>
+    
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '925816941874428',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v16.0'
+    }); 
+      FB.AppEvents.logPageView();   
+      
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
     <link rel="stylesheet" href="css/index.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700&display=swap");
@@ -75,29 +97,6 @@
         <!-- <a href='https://ko-fi.com/I2I0230S1' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
       
 <!--About us --->
-
-        <!-- <div class="card-holder">
-          <div class="card">
-            <div class="card-contents">
-              <p>
-                <div class="TContainer"> 
-                <span class="card__read-more">
-                  <br>
-                  <span id="center">Let Kuya Bai help you learn Baybayin,</span><br> 
-                    <span id="center"> our very own ancient Tagalog script.</span><br>
-                    <br>
-                  <span id="center">Use the translator to know how to write & spell Baybayin.</span><br> 
-                  <span id="center">If you have questions, buzz us at hello(at)orangefix.xyz</span><br>
-                  <br>
-            
-                </span>
-              </div>
-              </p>
-              <p class="read-more-btnn">ⓘ</p>
-            </div>
-          </div>
-      </div> -->
-      
       <div data-modal-target="#modal" style="cursor: pointer" ><img src="/assets/images/Info_button.svg" height="20px" width="50px" class="filter-brown"></div>
         <div class="modal" id="modal">
           <div class="modal-header">
@@ -182,6 +181,18 @@
           </button>
           <!-- https://www.youtube.com/watch?v=q-tGimz34Ho&t=392s -->
 
+
+          
+          <button 
+            id = "down-btn"
+            onclick="sharefbimage()"
+            hover="down-options"
+            style="cursor: pointer">
+              <!-- <i class="fas fa-share-alt"></i>  -->
+            FB
+          </button>
+
+
           <div class="share" id="share_amongus" >
             <div class="btn js-btn-open">
               <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -211,25 +222,25 @@
           const fb = document.querySelector('.facebook');
           fb.href = `https://www.facebook.com/share.php?u=${link}`;
           
-          // twitter
-          const twitter = document.querySelector('.twitter');
-          twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
+          // // twitter
+          // const twitter = document.querySelector('.twitter');
+          // twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
 
-          // linkedin
-          const linkedIn = document.querySelector('.linkedin');
-          linkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${link}`;
+          // // linkedin
+          // const linkedIn = document.querySelector('.linkedin');
+          // linkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${link}`;
           
-          // reddit
-          const reddit = document.querySelector('.reddit');
-          reddit.href = `http://www.reddit.com/submit?url=${link}&title=${title}`;
+          // // reddit
+          // const reddit = document.querySelector('.reddit');
+          // reddit.href = `http://www.reddit.com/submit?url=${link}&title=${title}`;
           
-          // whatsapp
-          const whatsapp = document.querySelector('.whatsapp');
-          whatsapp.href = `https://api.whatsapp.com/send?text=${msg}: ${link}`;
+          // // whatsapp
+          // const whatsapp = document.querySelector('.whatsapp');
+          // whatsapp.href = `https://api.whatsapp.com/send?text=${msg}: ${link}`;
           
-          // Telegram 
-          const telegram = document.querySelector('.telegram');
-          telegram.href = `https://telegram.me/share/url?url=${link}&text=${msg}`;
+          // // Telegram 
+          // const telegram = document.querySelector('.telegram');
+          // telegram.href = `https://telegram.me/share/url?url=${link}&text=${msg}`;
     
           </script>       
           
