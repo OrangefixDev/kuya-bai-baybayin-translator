@@ -362,7 +362,11 @@ var contentToToggle = document.querySelector(".social");
         link: 'https://developers.facebook.com/docs/dialogs/',
         picture: 'https://cdn.discordapp.com/attachments/1077876518191104000/1097367064366284800/341074544_744084537423397_8765253421734151781_n.png',
         caption: 'Ishelf Book',
-        description: 'your description'
+        description: 'your description',
+        appId      : '925816941874428',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v16.0'
     },
     function (response) {
         if (response && response.post_id) {
