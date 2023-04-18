@@ -195,7 +195,6 @@ function convert() {
   var img = new Image();
   img.dataset.transtext = transtext;
   img.dataset.rawtext = rawtext;
-  img.dataset.isPreview = true;
   img.onload = createImage;
   img.src = "/assets/images/share-sample.png";
 }
