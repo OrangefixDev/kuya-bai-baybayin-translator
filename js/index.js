@@ -40,11 +40,11 @@ function baybayinTranslate() {
   rawText = rawText.replace(/e/g, "i");
   rawText = rawText.replace(/o/g, "u");
 
-  rawText = rawText.replace(/nang/g, "\u1708\u1705\u1714");
-  rawText = rawText.replace(/ning/g, "\u1708\u1712\u1705\u1714");
-  rawText = rawText.replace(/neng/g, "\u1708\u1712\u1705\u1714");
-  rawText = rawText.replace(/nong/g, "\u1708\u1713\u1705\u1714");
-  rawText = rawText.replace(/nung/g, "\u1708\u1713\u1705\u1714");
+  //rawText = rawText.replace(/nang/g, "\u1708\u1705\u1714");
+  //rawText = rawText.replace(/ning/g, "\u1708\u1712\u1705\u1714");
+  //rawText = rawText.replace(/neng/g, "\u1708\u1712\u1705\u1714");
+  //rawText = rawText.replace(/nong/g, "\u1708\u1713\u1705\u1714");
+  //rawText = rawText.replace(/nung/g, "\u1708\u1713\u1705\u1714");
 
 
   rawText = rawText.replace(/nga/g, "\u1705");
@@ -140,28 +140,40 @@ function createImage() {
   ctx.textAlign = 'center';
   var ttext = [];
   var rtext = [];
-  var heights = [];
-  var tscale = 0;
+  var height = 0;
+  var wscale = 1;
+  var hscale = 1;
+  var correction = 30;
   //var rscale = 0;
   
-  var twords = [];
-  var temp1 = this.dataset.transtext.split('\n');
-  temp1.forEach((element) => {
-    var temp2 = element.split(' ');
-    temp2.forEach((element) => twords.push(element));
-  }); 
-  tscale = getAdjustment(twords, '12em Baybayin', this.width);
-  ctx.font = `${12*tscale}em Baybayin`;
-  populateText(getLines(twords, this.width), ttext, heights, tscale);
-  
-  var rwords = [];
-  temp1 = this.dataset.rawtext.split('\n');
-  temp1.forEach((element) => {
-    var temp2 = element.split(' ');
-    temp2.forEach((element) => rwords.push(element));
-  });
-  ctx.font = '4em Lexend Deca';
-  populateText(getLines(rwords, this.width), rtext, heights, 1);
+  ctx.font = `${12*wscale*hscale}em Baybayin`;
+  ttext = getText(this.dataset.transtext, this.width);
+  wscale = getWidthScale(ttext, this.width);
+  height += getHeight(ttext, hscale, wscale, correction);
+
+  height += ((10+correction)*wscale*hscale);
+
+  ctx.font = `${4*hscale}em Lexend Deca`;
+  rtext = getText(this.dataset.rawtext, this.width);
+  height += getHeight(rtext, hscale);
+
+
+  while(height > 1050) {
+    hscale = (height > 1050) ? (1050/height) : 1;
+    height = 0;
+
+    ctx.font = `${12*wscale*hscale}em Baybayin`;
+    ttext = getText(this.dataset.transtext, this.width);
+    height += getHeight(ttext, hscale, wscale, correction);
+
+    height += ((10+correction)*wscale*hscale);
+
+    ctx.font = `${4*hscale}em Lexend Deca`;
+    rtext = getText(this.dataset.rawtext, this.width);
+    height += getHeight(rtext, hscale);
+  }
+
+  var heights = getHeights(ttext, rtext, wscale, hscale, correction);
 
   var a = ttext.length;
   var b = rtext.length;
@@ -171,16 +183,22 @@ function createImage() {
   var x = this.width / 2;
   var y = 625 - textHeight / 2;
 
-  ctx.font = `${12*tscale}em Baybayin`;
+  ctx.font = `${12*wscale*hscale}em Baybayin`;
   for (var k = 0; k < a; k++) ctx.fillText(ttext[k], x, y+heights[k]);
-
-  ctx.font = '4em Lexend Deca';
+  ctx.font = `${4*hscale}em Lexend Deca`;
   for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
+
+  if (this.dataset.isPreview) {
+    if (lofctr > 0) {
+      var emptay = (lofctr > 1) ? `are ${lofctr} words that exceed` : `is ${lofctr} word that exceeds`
+      alert(`There ${emptay} the width of the image.`);
+    }
+  }
 
   if (this.dataset.isDownload) {
     var anchor = document.createElement("a");
     anchor.href = canvas.toDataURL("image/png");
-    anchor.download = `kuyabai_${getWords(rtext)}_${getNow()}.png`;
+    anchor.download = `kuyabai_${textToFilename(rtext)}_${getNow()}.png`;
     anchor.click();
   }
 }
@@ -214,12 +232,12 @@ function downloadCanvas() {
   img.dataset.rawtext = rawtext;
   img.dataset.isDownload = true;
   img.onload = createImage;
-  img.src = "/assets/images/share-sample.png";
+  img.src = "../assets/images/share-sample.png";
   const base64Canvas = canvas.toDataURL("image/jpeg").split(';base64,')[1];
   console.log(base64Canvas);
 }
 
-function getWords(array) {
+function textToFilename(array) {
   var str = "";
   var temp = array[0];
   var temp2 = temp.split(" ");
@@ -247,29 +265,57 @@ function getNow() {
   return `${year}${month}${date}T${hour}${minute}${second}`;
 }
 
-function getAdjustment(words, font, maxWidth) {
-  ctx.font = font;
+function getWidthScale(lines, maxWidth) {
   var widestWidth = 0;
-  words.forEach((element) => {
+  lines.forEach((element) => {
     var width = ctx.measureText(element).width;
     if (width > maxWidth) {
       if (width > widestWidth) widestWidth = width;
     }
   });
+
   return (widestWidth > maxWidth) ? (maxWidth/widestWidth) : 1;
 }
 
-function populateText(words, text, heights, scale) {
-  words.forEach((element) => {
+function getHeight(lines, hscale, wscale = 1, correction = 0) {
+  var height = 0;
+  lines.forEach((element) => {
     var line = ctx.measureText(element);
-    var space = (heights.length-1 < 0) ? 0 : (heights[heights.length-1] + (10*scale));
-    heights.push(line.fontBoundingBoxAscent + line.actualBoundingBoxDescent + space);
-    text.push(element);
+    var y = line.fontBoundingBoxAscent + line.actualBoundingBoxDescent + ((height > 0) ? ((10+correction)*wscale*hscale) : 0);
+    height += y;
   });
+  return height;
 }
 
-function getLines(words, maxWidth) {
-  //var words = text.split(' ');
+function getHeights(text1, text2, wscale, hscale, correction) {
+  var heights = [];
+  ctx.font = `${12*wscale*hscale}em Baybayin`;
+  text1.forEach((element) => {
+    var line = ctx.measureText(element);
+    var space = (heights.length === 0) ? 0 : (heights[heights.length-1] + ((10+correction)*wscale*hscale));
+    heights.push(line.fontBoundingBoxAscent + line.actualBoundingBoxDescent + space);
+  });
+  ctx.font = `${4*hscale}em Lexend Deca`;
+  text2.forEach((element, index) => {
+    var line = ctx.measureText(element);
+    var space = heights[heights.length-1] + ((10 + ((index > 0) ? 0 : correction))*hscale);
+    heights.push(line.fontBoundingBoxAscent + line.actualBoundingBoxDescent + space);
+  });
+  return heights;
+}
+
+function getText(text, width) {
+  var newLines = [];
+  var lines = text.split('\n');
+  lines.forEach((element) => {
+    var line = getLines(element, width);
+    line.forEach(element => newLines.push(element));
+  });
+  return newLines;
+}
+
+function getLines(text, maxWidth) {
+  var words = text.split(' ');
   var lines = [];
   var currentLine = words[0];
 
@@ -349,4 +395,5 @@ var contentToToggle = document.querySelector(".social");
         contentToToggle.classList.toggle("open");
 }
 );
+
 
