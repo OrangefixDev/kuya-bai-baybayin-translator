@@ -256,7 +256,7 @@ function getAdjustment(words, font, maxWidth) {
       if (width > widestWidth) widestWidth = width;
     }
   });
-  return (widestWidth>maxWidth)?(maxWidth/widestWidth):1;
+  return (widestWidth > maxWidth) ? (maxWidth/widestWidth) : 1;
 }
 
 function populateText(words, text, heights, scale) {
