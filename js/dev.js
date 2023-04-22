@@ -102,20 +102,34 @@ function baybayinTranslate() {
   rawText = rawText.replace(/i/g, "\u1701");
   rawText = rawText.replace(/u/g, "\u1702");
 
+  // c&q&k interchangable
   rawText = rawText.replace(/k/g, "\u1703\u1714");
+  rawText = rawText.replace(/c/g, "\u1703\u1714");
+  rawText = rawText.replace(/q/g, "\u1703\u1714");
+  // 
   rawText = rawText.replace(/g/g, "\u1704\u1714");
   rawText = rawText.replace(/t/g, "\u1706\u1714");
   rawText = rawText.replace(/d/g, "\u1707\u1714");
   rawText = rawText.replace(/n/g, "\u1708\u1714");
+  // f&p interchangable 
   rawText = rawText.replace(/p/g, "\u1709\u1714");
+  //v&b interchangable 
+  rawText = rawText.replace(/v/g, "\u170A\u1714");
   rawText = rawText.replace(/b/g, "\u170A\u1714");
+  // 
   rawText = rawText.replace(/m/g, "\u170B\u1714");
   rawText = rawText.replace(/y/g, "\u170C\u1714");
   rawText = rawText.replace(/r/g, "\u1707\u1714");
   rawText = rawText.replace(/l/g, "\u170E\u1714");
   rawText = rawText.replace(/w/g, "\u170F\u1714");
+  // x&z&s interchangable
   rawText = rawText.replace(/s/g, "\u1710\u1714");
+  rawText = rawText.replace(/x/g, "\u1710\u1714");
+  rawText = rawText.replace(/z/g, "\u1710\u1714");
+  //J&H interchangable
   rawText = rawText.replace(/h/g, "\u1711\u1714");
+  rawText = rawText.replace(/j/g, "\u1711\u1714");
+
 
 
   return rawText;
