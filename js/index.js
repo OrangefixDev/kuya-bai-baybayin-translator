@@ -1,6 +1,7 @@
 //loads function on webpage load
 window.onload = function () {
   document.getElementById("translatedTextArea").classList.toggle("baybayin");
+  convertText()
 };
 
 //copy text tooltip
