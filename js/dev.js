@@ -1,5 +1,11 @@
 //loads function on webpage load
 window.onload = function () {
+  if ('URLSearchParams' in window) {
+    let params = new URLSearchParams(window.location.search);
+    let rawText = document.getElementById('tagalogTextArea');
+    rawText.value = params.get('text');
+  }
+
   document.getElementById("translatedTextArea").classList.toggle("baybayin");
   convertText()
 };
@@ -39,6 +45,7 @@ function focus() {
 
 function baybayinTranslate() {
   let rawText = document.getElementById("tagalogTextArea").value.toLowerCase();
+  setParam(rawText);
   rawText = rawText.replace(/e/g, "i");
   rawText = rawText.replace(/o/g, "u");
 
@@ -146,6 +153,13 @@ function convertText() {
 }
 
 //var updater = 0;
+
+function setParam(text) {
+  let params = new URLSearchParams(window.location.search);
+  params.set('text', text);
+  var newQuery = window.location.pathname + '?' + params.toString();
+  history.pushState(null, '', newQuery);
+}
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
