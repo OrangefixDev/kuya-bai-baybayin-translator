@@ -115,6 +115,7 @@ function baybayinTranslate() {
   rawText = rawText.replace(/n/g, "\u1708\u1714");
   // f&p interchangable 
   rawText = rawText.replace(/p/g, "\u1709\u1714");
+  rawText = rawText.replace(/f/g, "\u1709\u1714");
   //v&b interchangable 
   rawText = rawText.replace(/v/g, "\u170A\u1714");
   rawText = rawText.replace(/b/g, "\u170A\u1714");
