@@ -61,6 +61,8 @@ function baybayinTranslate() {
   rawText = rawText.replace(/da/g, "\u1707");
   rawText = rawText.replace(/na/g, "\u1708");
   rawText = rawText.replace(/pa/g, "\u1709");
+  rawText = rawText.replace(/fa/g, "\u1709");
+
   rawText = rawText.replace(/ba/g, "\u170A");
   rawText = rawText.replace(/ma/g, "\u170B");
   rawText = rawText.replace(/ya/g, "\u170C");
