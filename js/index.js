@@ -1,8 +1,15 @@
 //loads function on webpage load
 window.onload = function () {
+  if ('URLSearchParams' in window) {
+    let params = new URLSearchParams(window.location.search);
+    let rawText = document.getElementById('tagalogTextArea');
+    rawText.value = params.get('text');
+  }
+
   document.getElementById("translatedTextArea").classList.toggle("baybayin");
   convertText()
 };
+
 
 //copy text tooltip
 function showTooltip() {
@@ -38,6 +45,7 @@ function focus() {
 
 function baybayinTranslate() {
   let rawText = document.getElementById("tagalogTextArea").value.toLowerCase();
+  setParam(rawText);
   rawText = rawText.replace(/e/g, "i");
   rawText = rawText.replace(/o/g, "u");
 
@@ -60,6 +68,8 @@ function baybayinTranslate() {
   rawText = rawText.replace(/da/g, "\u1707");
   rawText = rawText.replace(/na/g, "\u1708");
   rawText = rawText.replace(/pa/g, "\u1709");
+  rawText = rawText.replace(/fa/g, "\u1709");
+
   rawText = rawText.replace(/ba/g, "\u170A");
   rawText = rawText.replace(/ma/g, "\u170B");
   rawText = rawText.replace(/ya/g, "\u170C");
@@ -133,6 +143,7 @@ function baybayinTranslate() {
   rawText = rawText.replace(/j/g, "\u1711\u1714");
 
 
+
   return rawText;
 }
 function convertText() {
@@ -142,6 +153,13 @@ function convertText() {
 }
 
 //var updater = 0;
+
+function setParam(text) {
+  let params = new URLSearchParams(window.location.search);
+  params.set('q', text);
+  var newQuery = window.location.pathname + '?' + params.toString();
+  history.pushState(null, '', newQuery);
+}
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
@@ -156,20 +174,22 @@ function createImage() {
   var ttext = [];
   var rtext = [];
   var height = 0;
-  var wscale = 1;
+  var wscale1 = 1;
+  var wscale2 = 1
   var hscale = 1;
   var correction = 30;
   //var rscale = 0;
   
-  ctx.font = `${12*wscale*hscale}em Baybayin`;
+  ctx.font = `${12*wscale1*hscale}em Baybayin`;
   ttext = getText(this.dataset.transtext, this.width);
-  wscale = getWidthScale(ttext, this.width);
-  height += getHeight(ttext, hscale, wscale, correction);
+  wscale1 = getWidthScale(ttext, this.width);
+  height += getHeight(ttext, hscale, wscale1, correction);
 
-  height += ((10+correction)*wscale*hscale);
+  height += ((10+correction)*wscale1*hscale);
 
-  ctx.font = `${4*hscale}em Lexend Deca`;
+  ctx.font = `${4*wscale2*hscale}em Lexend Deca`;
   rtext = getText(this.dataset.rawtext, this.width);
+  wscale2 = getWidthScale(rtext, this.width);
   height += getHeight(rtext, hscale);
 
 
@@ -177,18 +197,18 @@ function createImage() {
     hscale = (height > 1050) ? (1050/height) : 1;
     height = 0;
 
-    ctx.font = `${12*wscale*hscale}em Baybayin`;
+    ctx.font = `${12*wscale1*hscale}em Baybayin`;
     ttext = getText(this.dataset.transtext, this.width);
-    height += getHeight(ttext, hscale, wscale, correction);
+    height += getHeight(ttext, hscale, wscale1, correction);
 
-    height += ((10+correction)*wscale*hscale);
+    height += ((10+correction)*wscale1*hscale);
 
-    ctx.font = `${4*hscale}em Lexend Deca`;
+    ctx.font = `${4*wscale2*hscale}em Lexend Deca`;
     rtext = getText(this.dataset.rawtext, this.width);
-    height += getHeight(rtext, hscale);
+    height += getHeight(rtext, hscale, wscale2);
   }
 
-  var heights = getHeights(ttext, rtext, wscale, hscale, correction);
+  var heights = getHeights(ttext, rtext, wscale1, wscale2, hscale, correction);
 
   var a = ttext.length;
   var b = rtext.length;
@@ -198,9 +218,9 @@ function createImage() {
   var x = this.width / 2;
   var y = 625 - textHeight / 2;
 
-  ctx.font = `${12*wscale*hscale}em Baybayin`;
+  ctx.font = `${12*wscale1*hscale}em Baybayin`;
   for (var k = 0; k < a; k++) ctx.fillText(ttext[k], x, y+heights[k]);
-  ctx.font = `${4*hscale}em Lexend Deca`;
+  ctx.font = `${4*wscale2*hscale}em Lexend Deca`;
   for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
 
   if (this.dataset.isPreview) {
@@ -302,18 +322,18 @@ function getHeight(lines, hscale, wscale = 1, correction = 0) {
   return height;
 }
 
-function getHeights(text1, text2, wscale, hscale, correction) {
+function getHeights(text1, text2, wscale1, wscale2, hscale, correction) {
   var heights = [];
-  ctx.font = `${12*wscale*hscale}em Baybayin`;
+  ctx.font = `${12*wscale1*hscale}em Baybayin`;
   text1.forEach((element) => {
     var line = ctx.measureText(element);
-    var space = (heights.length === 0) ? 0 : (heights[heights.length-1] + ((10+correction)*wscale*hscale));
+    var space = (heights.length === 0) ? 0 : (heights[heights.length-1] + ((10+correction)*wscale1*hscale));
     heights.push(line.fontBoundingBoxAscent + line.actualBoundingBoxDescent + space);
   });
-  ctx.font = `${4*hscale}em Lexend Deca`;
+  ctx.font = `${4*wscale2*hscale}em Lexend Deca`;
   text2.forEach((element, index) => {
     var line = ctx.measureText(element);
-    var space = heights[heights.length-1] + ((10 + ((index > 0) ? 0 : correction))*hscale);
+    var space = heights[heights.length-1] + ((10 + ((index > 0) ? 0 : correction))*wscale2*hscale);
     heights.push(line.fontBoundingBoxAscent + line.actualBoundingBoxDescent + space);
   });
   return heights;
@@ -411,4 +431,30 @@ var contentToToggle = document.querySelector(".social");
 }
 );
 
-
+  function sharefbimage() 
+  {
+    FB.init({ appId: `your appid`, status: true, cookie: true });
+    FB.ui(
+    {
+        method: `share`,
+        name: 'Facebook Dialogs',
+        href: $(location).attr('href'),
+        link: 'https://developers.facebook.com/docs/dialogs/',
+        picture: 'https://cdn.discordapp.com/attachments/1077876518191104000/1097367064366284800/341074544_744084537423397_8765253421734151781_n.png',
+        caption: 'Ishelf Book',
+        description: 'your description',
+        appId      : '925816941874428',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v16.0'
+    },
+    function (response) {
+        if (response && response.post_id) {
+            alert('success');
+        } 
+        else {
+            alert('error');
+        }
+    }
+    )
+  };

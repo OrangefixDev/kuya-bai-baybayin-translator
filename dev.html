@@ -200,20 +200,21 @@
               <ul>
                 <li class="js-btns-share"><a class="facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li class="js-btns-share"><a class="twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="js-btns-share"><a href="https://plus.google.com/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <!-- <li class="js-btns-share"><a href="https://plus.google.com/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> -->
+                <!-- <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li> -->
+                <!-- <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li> -->
+                <!-- <li class="js-btns-share"><a href="https://www.linkedin.com/cws/share?url=https://codepen.io/Cristiano123/pen/dXQNVj" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li> -->
               </ul>
             </div>
           </div>
+          
         </div>
  
         <!-- working website share -->
         <script>
           
           const link = encodeURI('https://kuyabai.com/');
-          const msg = encodeURIComponent('Sus, sus sus sus sus');
+          const msg = encodeURIComponent('');
           // const img = encodeURI();   
           const title = encodeURIComponent('test');
       
@@ -222,8 +223,8 @@
           fb.href = `https://www.facebook.com/share.php?u=${link}`;
           
           // // twitter
-          // const twitter = document.querySelector('.twitter');
-          // twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
+          const twitter = document.querySelector('.twitter');
+          twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
 
           // // linkedin
           // const linkedIn = document.querySelector('.linkedin');

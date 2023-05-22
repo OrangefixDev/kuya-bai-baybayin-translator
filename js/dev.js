@@ -156,7 +156,7 @@ function convertText() {
 
 function setParam(text) {
   let params = new URLSearchParams(window.location.search);
-  params.set('text', text);
+  params.set('q', text);
   var newQuery = window.location.pathname + '?' + params.toString();
   history.pushState(null, '', newQuery);
 }
