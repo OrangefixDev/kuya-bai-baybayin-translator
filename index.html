@@ -153,8 +153,9 @@
                 >
                 Copy
             </button>
-            <button id="open-preview" class="open-preview" onclick="convert()" style="cursor: pointer">Preview</button>
-            <button 
+            <button id="open-preview" class="open-preview" onclick="convert()" style="cursor: pointer">Download</button>
+            
+            <!-- <button 
                 id = "down-btn" 
                 class= "down-btn"
                 href=#
@@ -163,7 +164,7 @@
                 style="cursor: pointer"
                 >
                 Download
-            </button>
+            </button> -->
 
             <div class="share" id="share_amongus" >
               <div class="btn js-btn-open">
@@ -210,6 +211,7 @@
 
   <dialog id="preview">
     <canvas id="canvas" height="500" width="500"></canvas>
+    <button id="download-preview" onclick="downloadCanvas()">download</button>
     <button id="close-preview" class="close-preview">&times;</button>
   </dialog>
 

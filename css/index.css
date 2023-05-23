@@ -227,15 +227,16 @@ button:hover {
 
 #download-preview {
   width: 6em;
-  height: 2em;
+  height: 1.5em;
   padding: 0;
   right: 0;
   font-weight: bolder;
   font-size: 1em;
-  margin-top: 480px;
+  margin-top: 485px;
   margin-right: 215px;
   position: absolute;
-  color: #000000;
+  background-color: var(--light-green);
+  color: #ffffff;
   cursor: pointer;
 }
 
