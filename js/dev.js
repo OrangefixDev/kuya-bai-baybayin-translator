@@ -412,12 +412,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const preview = document.querySelector('#preview');
 const openPreview = document.querySelector('.open-preview');
+const downloadPreview = document.querySelector('.download-preview');
 const closePreview = document.querySelector('.close-preview');
   
 openPreview.addEventListener('click', () => {
   preview.showModal();
 });
-  
+
 closePreview.addEventListener('click', () => {
     preview.close();
 });

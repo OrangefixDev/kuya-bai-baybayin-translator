@@ -225,6 +225,21 @@ button:hover {
   background: rgba(0, 0, 0, 0.25);
 }
 
+#download-preview {
+  width: 6em;
+  height: 2em;
+  padding: 0;
+  right: 0;
+  font-weight: bolder;
+  font-size: 1em;
+  margin-top: 480px;
+  margin-right: 215px;
+  position: absolute;
+  color: #000000;
+  cursor: pointer;
+}
+
+
 #close-preview {
   width: 2em;
   height: 2em;
