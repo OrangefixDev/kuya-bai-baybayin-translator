@@ -177,16 +177,6 @@ textarea {
   background-color: var(--gray-light);
 }
 
-
-
-@media (min-width: 500px) and (max-width: 900px) {
-  form button {
-       width: 125px;
-  }
-}
-
-
-
 .translator-main-blocks button {
   /* font-size: var(--font-size-mobile); */
   font-family: "Lexend Deca", sans-serif;
@@ -621,4 +611,34 @@ span.footer-text {
 }
 .share .social ul li i {
   color: #555;
+}
+
+
+/*For Mobile and Smaller Screens Sizes*/
+@media (min-width: 500px) and (max-width: 900px) {
+  form button {
+       width: 125px;
+  }
+}
+
+/*@media (min-width: 501px) and (max-width: 600px) {
+  .translator-main-blocks div {
+    line-height: 3;
+  }
+}*/
+
+@media (min-width: 0px) and (max-width: 750px) {
+  .translator-main-blocks div {
+    line-height: 3;
+    padding: 25px;
+  }
+
+  .share .btn {
+    padding: 0 20px;
+  }
+
+  #share_amongus {
+    display: flex;
+    padding: 0 0 0 0;
+  }
 }
