@@ -378,7 +378,7 @@ button:hover {
 
 /* 04 Mobile Styles */
 
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 0px) {
   h1,
   h2,
   h3,
@@ -515,7 +515,7 @@ span.footer-text {
 }
 
 .modal-header {
-  padding: 10px 15px;
+  padding: 9px 15px;
   display: flex;
   justify-content: center;
   text-align: center; 
@@ -567,37 +567,23 @@ span.footer-text {
 
 .share {
   position: absolute;
-  text-align: center;  
-
-
-
-  appearance: auto;
-  writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
   display: inline-block;
   text-align: center;
-  align-items: flex-start;
   cursor: default;
   box-sizing: border-box;
   margin: 0em;
 }
 
 #share_amongus{
-  padding: 0 4px;
+  padding: 0 1.5px;
 }
 
 
 .share .btn {
   border-radius: 5px;
   background-color: #74C460;
-  padding: 9px 20px;
-  display: inline-block;
+  padding: 10px 20px;
+  
   transition: all 0.4s linear;
 }
 /* .share .btn:hover {
