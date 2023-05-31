@@ -621,12 +621,6 @@ span.footer-text {
   }
 }
 
-/*@media (min-width: 501px) and (max-width: 600px) {
-  .translator-main-blocks div {
-    line-height: 3;
-  }
-}*/
-
 @media (min-width: 0px) and (max-width: 750px) {
   .translator-main-blocks div {
     line-height: 3;
@@ -640,5 +634,17 @@ span.footer-text {
   #share_amongus {
     display: inherit;
     padding: 0 0 0 0;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 500px) {
+  #tagalogTextArea
+  {
+    font-size: 1.5em;
+  }
+
+  label
+  {
+    line-height: 0;
   }
 }
