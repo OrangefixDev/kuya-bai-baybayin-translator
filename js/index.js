@@ -3,7 +3,7 @@ window.onload = function () {
   if ('URLSearchParams' in window) {
     let params = new URLSearchParams(window.location.search);
     let rawText = document.getElementById('tagalogTextArea');
-    rawText.value = params.get('text');
+    rawText.value = params.get('q');
   }
 
   document.getElementById("translatedTextArea").classList.toggle("baybayin");
