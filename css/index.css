@@ -480,6 +480,25 @@ order: 3;
   right:220px;
 }
 
+.kuyabai-logo-non-floating {
+  /* margin-top: 50px; */
+  /* width: 60%; */
+  /* margin-right: 45%; */
+  /* margin-left: 45%; */
+  height: 4em;
+  padding-bottom: 0px;
+}
+
+.kuyabai-non-floating-top {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 40%;
+  margin-left: 40%; */
+}
+
 
 span.footer-text {
   font-size: 1em;
@@ -539,6 +558,15 @@ span.footer-text {
   right:100px;
 }
 
+.title-non-floating {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color:#42210B;
+  /* margin-left: 40%; */
+  /* margin-right: 40%; */
+}
+
 .floating-arrow {
   position: fixed;
   font-family: "Lexend Deca", sans-serif;
@@ -552,6 +580,55 @@ span.footer-text {
   -webkit-animation: action 1s infinite  alternate;
   animation: action 1s infinite  alternate;
 }
+
+.non-floating-arrow {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bold;
+  color:#42210B;
+  text-align: center;
+
+  -webkit-animation: action 1s infinite  alternate;
+  animation: action 1s infinite  alternate;
+}
+
+@media only screen and (min-width: 1080px) {
+  .non-floating {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .floating {
+    display: none;
+  }
+
+  /* .floating-btn {
+    position:fixed;
+    top:80px;
+    right:30px;
+  }
+
+  .title-floating {
+    position: fixed;
+    top:10px;
+    right:100px;
+  }
+  
+  .floating-arrow {
+    position: fixed;
+    top:10px;
+    right:60px;
+  }
+
+  .kuyabai-logo-floating {
+    position: fixed;
+    top:10px;
+    right:220px;
+  } */
+}
+
+
 
 @-webkit-keyframes action {
   0% { transform: translateY(0); }
@@ -662,6 +739,24 @@ span.footer-text {
 	bottom:40px;
 	right:30px;
 	background-color:#0C9;
+	color:#FFF;
+	border-radius:5%;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  background-color: var(--light-green);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+.non-floating-btn {
+  /* height:60px; */
+  margin-top: 20px;
+  width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+  background-color:#0C9;
 	color:#FFF;
 	border-radius:5%;
 	text-align:center;

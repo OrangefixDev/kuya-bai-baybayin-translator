@@ -107,6 +107,7 @@
 
         </div>
                        <!-- Navigation / Header End -->
+
    
         <!-- Main Translator Div -->
         <div id="translatorMain" class="translator-main flex-jcc">
@@ -189,15 +190,23 @@
       const twitter = document.querySelector('.twitter');
       twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
       
-    </script>       
-
+    </script>
     
-    <img class="kuyabai-logo-floating" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="orangefix logo">
-    <div class="title-floating">Kuya Bai<br>recommends</div>
+    <div class="non-floating">
+      <div class="kuyabai-non-floating-top">
+        <img class="kuyabai-logo-non-floating non-floating" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="orangefix logo">
+        <span class="title-non-floating non-floating">Kuya Bai<br>recommends</span>
+        <span class="non-floating-arrow non-floating">🡶</span>
+      </div>
+      <button class="non-floating-btn non-floating" style="cursor: pointer"><a style="text-decoration: none" href="/assets/kuya-bai-worksheets-2023ed.pdf" target="_blank">Download our FREE Baybayin Worksheets</a></button>
+    </div>
+    
+    <img class="kuyabai-logo-floating floating" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="orangefix logo">
+    <div class="title-floating floating">Kuya Bai<br>recommends</div>
 
-    <button class="floating-btn" style="cursor: pointer"><a style="text-decoration: none" href="/assets/kuya-bai-worksheets-2023ed.pdf" target="_blank">Download Baybayin Worksheet</a></button>
+    <button class="floating-btn floating" style="cursor: pointer"><a style="text-decoration: none" href="/assets/kuya-bai-worksheets-2023ed.pdf" target="_blank">Download our FREE Baybayin Worksheets</a></button>
 
-    <span class="floating-arrow">🡶</span>
+    <span class="floating-arrow floating">🡶</span>
 
   <div id="preview-hidden"> <!-- style="border-style: solid;"> -->
     <canvas id="canvas-hidden" height="1400" width="1400">
