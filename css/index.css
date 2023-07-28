@@ -472,6 +472,14 @@ order: 3;
   margin-left: 100px;
 }
 
+.kuyabai-logo-floating {
+  position: fixed;
+  height: 4em;
+  padding-bottom: 0px;
+  bottom:110px;
+  right:220px;
+}
+
 
 span.footer-text {
   font-size: 1em;
@@ -519,6 +527,40 @@ span.footer-text {
   font-weight: bold;
   text-align: center;
   color:#42210B;
+}
+
+.title-floating {
+  position: fixed;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color:#42210B;
+  bottom:120px;
+  right:100px;
+}
+
+.floating-arrow {
+  position: fixed;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bold;
+  color:#42210B;
+  text-align: center;
+  bottom:120px;
+  right:60px;
+
+  -webkit-animation: action 1s infinite  alternate;
+  animation: action 1s infinite  alternate;
+}
+
+@-webkit-keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 
 .modal-header .close-button {
@@ -611,6 +653,23 @@ span.footer-text {
 }
 .share .social ul li i {
   color: #555;
+}
+
+.floating-btn {
+  position:fixed;
+	/* width:60px; */
+	height:60px;
+	bottom:40px;
+	right:30px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:5%;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  background-color: var(--light-green);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 
