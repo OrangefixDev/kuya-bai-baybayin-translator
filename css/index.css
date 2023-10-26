@@ -640,6 +640,10 @@ span.footer-text {
   100% { transform: translateY(-10px); }
 }
 
+.info-icon {
+  margin: -30px 0 0 160px;  
+}
+
 .modal-header .close-button {
   cursor: pointer;
   color: white;
