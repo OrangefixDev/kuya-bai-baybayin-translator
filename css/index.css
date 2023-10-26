@@ -192,6 +192,7 @@ textarea {
 button:hover {
   background-color: var(--light-green);
 }
+
 #translatedTextArea {
   /* font-family: Baybayin; */
 }
@@ -846,7 +847,7 @@ nav .logo {
   text-decoration-color: #e89c58;
   font-size: 22px;
   font-family: "Playfair Display", serif;
-  font-weight: 100;0px 3px var(--main-clr)
+  font-weight: 10px 3px var(--main-clr);
 }
 
 nav ul {
