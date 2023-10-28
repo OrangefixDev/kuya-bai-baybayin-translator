@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script src="https://kit.fontawesome.com/93ce3fc8d3.js" crossorigin="anonymous"></script>
+    <!-- <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ST2JEZKDYS"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+  
+      gtag('config', 'G-ST2JEZKDYS');
+    </script>
+    <link rel="stylesheet" href="../css/index.css">
+    <meta name="theme-color" content="#ffc248">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700&display=swap");
+    </style>
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6636553514132414"
+crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Learn Baybayin with Kuya Bai | Tagalog to Baybayin Translator">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.kuyabai.com/assets/images/icons/logo_square.png">
+    <meta property="og:image:alt" content="Kuya Bai Tagalog to Baybayin Translator">
+    <meta property="og:url" content="https://www.kuyabai.com">
+    <meta property="og:description" content="Learn Baybayin with Kuya Bai, our very own pre-colonial, ancient Filipino Tagalog script in the Philippines">
+    <meta property="fb:app_id" content="925816941874428">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffc248">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="twitter:title" content="Kuya Bai Baybayin Translator">
+    <meta name="twitter:description" content="Learn Baybayin with Kuya Bai, our very own pre-colonial, ancient Filipino Tagalog script in the Philippines">
+    <meta name="twitter:image" content="https://www.kuyabai.com/assets/images/icons/logo_square.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>FREE Baybayin Course | Learn Baybayin with Kuya Bai</title>
+    <meta name="description" content="Learn Baybayin with Kuya Bai, our very own pre-colonial, ancient Filipino Tagalog script in the Philippines">
+  </head>
+  <body>
+    <div class="flex-row">
+      <!-- Navigation / Header  -->
+      <div id="navigation-header" class="header">
+        <nav>
+          <div>
+            <!--About us --->
+            <div data-modal-target="#modal" style="cursor: pointer"><a href="/"><img
+                  src="https://www.kuyabai.com/assets/images/logo_horizontal.png"
+                  alt="Ako si Kuya Bai! Tara mag-aral ng Baybayin" height="50px"></a>
+              &nbsp;
+              <div class="info-icon"><img src="https://www.kuyabai.com/assets/images/Info_button.svg"
+                  class="filter-brown" height="20px" width="50px"></div>
+            </div>
+            <div class="modal" id="modal"> <img class="kuyabai-logo" style="margin-right: 10px;"
+                src="assets/images/icons/KuyaBai_Logo.png" alt="Ako si Kuya Bai">
+              <div class="modal-header">
+                <div class="title">Meet Kuya Bai</div>
+                <div class="close"><button data-close-button="" class="close-button">×</button></div>
+              </div>
+              <div class="modal-body" id="center"> <br>
+                <span>Let Kuya Bai help you learn Baybayin, our very own ancient
+                  Philippine Tagalog script.</span><br>
+                <br>
+                <span>Use the translator to learn how to write &amp; spell
+                  baybayin.</span><br>
+                <br>
+                <span>If you have questions, buzz us at hello (at)
+                  orangefix.xyz.</span> <br>
+                <br>
+              </div>
+            </div>
+            <div id="overlay"></div>
+            <!--About us ---> </div>
+          <div>
+            <ul id="nav">
+              <li><a href="/baybayin">Learn Baybayin</a></li>
+              <li><a href="/games">Baybayin Games</a></li>
+              <li><a href="/resources">Resources</a></li>
+              <li><a href="/downloads">Downloads</a></li>
+            </ul>
+          </div>
+          <div class="menu" id="menu"> <span></span> <span></span> <span></span>
+          </div>
+        </nav>
+      </div>
+      <!-- Navigation / Header End -->
+      <div style="text-align: center;">
+        <h2 class="heading">Baybayin Guide</h2>
+      </div>
+      <div style="text-align: center;"><img src="file:///G:/My%20Drive/Projects/Baybayin%20App%20%20%20Kuya%20Bai/2_Documents/eLearning/kuyabai-baybayin-guide.png"
+          alt="Baybayin Guide" style="width: 1082px; height: 721px;"></div>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: center;"><br>
+      </div>
+      <script>
+          
+      const link = encodeURI('https://www.kuyabai.com/');
+      const msg = encodeURIComponent('Learn Baybayin with Kuya Bai');
+  
+      // facebook
+      const fb = document.querySelector('.facebook');
+      fb.href = `https://www.facebook.com/share.php?u=${link}`;
+      
+      // // twitter
+      const twitter = document.querySelector('.twitter');
+      twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
+	  
+	  
+    </script>
+      <!-- TODO: a proper footer -->
+      <div class="footer" id="center"> <br>
+        <!-- <img src="assets/images/logo_horizontal.png" height="50px"alt=""> -->
+        <span class="footer-text" id="center">Say "Hi" at hello (at)
+          orangefix.xyz</span> <br>
+        <br>
+        <span class="footer-text">Thanks to the amazing work of <a href="https://jennayey.com/"
+            target="_blank" rel="noopener noreferrer">jennayey</a> ❤ and the <a
+            href="https://github.com/jennayey/philippine-scripts-translator" target="_blank"
+            rel="noopener noreferrer">Philippine Scripts Translator Project</a>.</span>
+        <br>
+        <br>
+        <span class="footer-text">You can also download the free <a href="https://github.com/OrangefixDev/kuya-bai-baybayin-translator/blob/main/assets/fonts/Baybayin/BaybayinNamin.otf?raw=true"
+            target="_blank" rel="noopener noreferrer">Baybayin Namin Open Type
+            Font</a>.</span> <br>
+        <br>
+        <a href="privacy" style="text-decoration:none">Privacy Policy</a> <span
+          style="font-weight: 600">|</span> <a href="terms" style="text-decoration:none">Terms
+          of Service</a> <br>
+        <br>
+        <span class="footer-text" id="center">Copyright © 2022 <a href="https://kuyabai.com"
+            target="_blank" rel="noopener noreferrer">kuyabai.com</a> <br>
+          <br>
+          <span class="footer-text" id="center">Follow us on <a href="https://www.facebook.com/KuyaBaiBaybayin"
+              target="_blank" rel="noopener noreferrer">Facebook</a> <br>
+            <br>
+            An <a href="https://orangefix.xyz" target="_blank" rel="noopener noreferrer">
+              <img class="orangefix-logo" style="margin-right: 1px;" src="https://orangefix.xyz/orangefix-logo-svg.svg"
+                alt="orangefix logo">Orangefix</a> side hustle</span>
+          <!-- <a href='https://ko-fi.com/I2I0230S1' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
+        </span></div>
+      <script src="../js/index.js"></script> </div>
+  </body>
+</html>
