@@ -17,9 +17,10 @@ Philippine Translator Scripts Stylesheet
 --gray-text: #6A6A6A;
 --gray:	#CDD8DB;
 --text-main: #27282D;
+--main-color: #42210b;
 --dark-green: #3CA123;
 --light-green:	#74C460;
---brown:	#42210B;
+--brown:	#42210B; 
 --yellow: #FFB82F;
 
   --box-shadow: 0px 4px 5px rgba(210, 210, 210, 0.25);
@@ -99,6 +100,10 @@ body {
   box-shadow: var(--box-shadow);
 }
 
+.heading {
+  padding: 0.5em 0 1em 0;
+}
+
 /* TODO: A proper footer */
 .footer {
   justify-content: center;
@@ -107,6 +112,10 @@ body {
 }
 
 #center {
+  text-align: center;
+}
+
+.center {
   text-align: center;
 }
 
@@ -966,3 +975,32 @@ nav .menu.active span:nth-child(2) {
     text-transform: capitalize;
   }
 }
+
+.pagination {
+  display: inline-block;
+  background-color: var(--yellow);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  margin: 0 4px;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.5s;
+}
+
+.pagination a.active {
+  background-color: #ddd;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #4CAF50;
+  color: white;
+}
+
