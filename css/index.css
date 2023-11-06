@@ -994,7 +994,7 @@ nav .menu.active span:nth-child(2) {
 }
 
 .pagination a.active {
-  background-color: #ddd;
+  background-color: #4CAF50;
   color: white;
   border-radius: 5px;
 }
@@ -1004,3 +1004,16 @@ nav .menu.active span:nth-child(2) {
   color: white;
 }
 
+#main-body {
+  margin: auto;
+  width: 80%;
+}
+
+#main-text {
+  line-height: 1.6;
+
+}
+
+#main-text h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0.9em;
+}
