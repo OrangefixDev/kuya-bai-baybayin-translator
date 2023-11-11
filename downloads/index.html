@@ -14,7 +14,7 @@
       gtag('config', 'G-ST2JEZKDYS');
     </script>
 	
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="../css/index.css" />
     <meta name="theme-color" content="#ffc248" />
     
     <style>
@@ -41,7 +41,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
 
-    <meta name="twitter:title" content="Kuya Bai Baybayin Translator" />
+    <meta name="twitter:title" content="Kuya Bai Tagalog to Baybayin Translator" />
     <meta
       name="twitter:description"
       content="Learn Baybayin with Kuya Bai, our very own pre-colonial, ancient Filipino Tagalog script in the Philippines"
@@ -52,29 +52,22 @@
     /> 
     <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Learn Baybayin with Kuya Bai | Tagalog to Baybayin Translator</title>
-    <meta
-      name="description"
-      content="Learn Baybayin with Kuya Bai, our very own pre-colonial, ancient Filipino Tagalog script in the Philippines"
-    />
+    <title>FREE Baybayin Downloads | Learn Baybayin with Kuya Bai</title>
+    <meta name="description" content="Learn Baybayin with Kuya Bai, our very own pre-colonial, ancient Filipino Tagalog script in the Philippines" />
   </head>
   <body>
-         <div id="toast">
-        <p>Toast-y</p>
-          </div>
-
         <div class="flex-row">
         <!-- Navigation / Header  -->
-        <div id="navigation-header" class="header">
+  <div id="navigation-header" class="header">
  
-<nav>
+  <nav>
   <div>
  				
 		          <!--About us --->
       <div data-modal-target="#modal" style="cursor: pointer" ><a href="/"><img src="https://www.kuyabai.com/assets/images/logo_horizontal.png" height="50px" alt="Ako si Kuya Bai! Tara mag-aral ng Baybayin"></a>
 	  &nbsp;<div class="info-icon"><img src="https://www.kuyabai.com/assets/images/Info_button.svg" height="20px" width="50px" class="filter-brown"></div></div>
           <div class="modal" id="modal">
-            <img class="kuyabai-logo" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="Ako si Kuya Bai"> 
+            
             <div class="modal-header">
               <div class="title">Meet Kuya Bai</div>
               <div class="close"><button data-close-button class="close-button">&times;</button></div>
@@ -96,9 +89,10 @@
 		
 		
   </div>
- <div>
+
+  <div>
     <ul id="nav">
-      <li><a href="/free-baybayin-course">Learn Baybayin</a></li>
+      <li><a href="/baybayin">Learn Baybayin</a></li>
       <li><a href="/games">Baybayin Games</a></li>
       <li><a href="/resources">Resources</a></li>
       <li><a href="/downloads">Downloads</a></li>
@@ -119,84 +113,13 @@
 
 
 
-        </div>
-
-
-
+  </div>
 		
-                       <!-- Navigation / Header End -->
+        <!-- Navigation / Header End -->
    
 
-        <!-- Main Translator Div -->
-        <div id="translatorMain" class="translator-main flex-jcc">
-        <!-- Translator Blocks Div  -->
-        <div class="translator-main-blocks">
-          <!-- Tagalog Text Area -->
-          <div class="translator-main-blocks-raw border-right border-bottom">
-            <label for="tagalogTextArea">Pilipino / Tagalog</label>
-            <textarea
-              name="tagalog-text-area"
-              id="tagalogTextArea"
-              placeholder="Type text here"
-              onclick="focus()"
-              onkeyup="convertText()"
-            ></textarea>
-            <button
-              id="clearButton"
-              onclick="clearText()"
-              style="cursor: pointer"
-            >
-              Clear
-            </button>
-          </div>
-
-          <!-- Tagalog Text Area  End-->
-
-          <!-- Translated  Text Area -->
-          <div class="translator-main-blocks-translated border-bottom">
-            <label for="translatedTextArea">Baybayin Translation</label>
-
-            <textarea
-                name="translated-text-area"
-                id="translatedTextArea"
-                readonly
-                >
-            </textarea>
-
-            <div>
-            <button
-                id="copyButton"
-                onclick="copyText()"
-                style="cursor: pointer"
-                >
-                Copy
-            </button>
-            <button id="open-preview" class="open-preview" onclick="convert()" style="cursor: pointer">Download</button>
-
-            <button id="share_amongus" class="share">
-            <div class="share" id="share_amongus" >
-              <div class="btn js-btn-open">
-                <i class="fa fa-retweet" aria-hidden="true"></i>
-              </div>
-              <div class="social js-btns-share" id="share_amongus">
-                <ul>
-                  <li class="js-btns-share"><a class="facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li class="js-btns-share"><a class="twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </button>
-          </div><!---->
-          </div>
-          <!-- Translated Text Area  End-->
-        </div>
-        <!-- Translator Blocks Div End  -->
-      </div>
-      <!-- Main Translator Div -->
-    </div>
 
     <script>
-          
       const link = encodeURI('https://www.kuyabai.com/');
       const msg = encodeURIComponent('Learn Baybayin with Kuya Bai');
   
@@ -207,47 +130,55 @@
       // // twitter
       const twitter = document.querySelector('.twitter');
       twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=baybayin,Filipino`;
-	  
-	  
     </script>
-    
-    <div class="non-floating">
-      <div class="kuyabai-non-floating-top">
-        <img class="kuyabai-logo-non-floating non-floating" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="Learn Baybayin with Kuya Bai">
-        <span class="title-non-floating non-floating">Kuya Bai<br>recommends</span>
-        <span class="non-floating-arrow non-floating">🡶</span>
-      </div>
-      <button class="non-floating-btn non-floating" style="cursor: pointer"><a style="text-decoration: none" href="/assets/kuya-bai-worksheets-2023ed.pdf" target="_blank">Download our FREE Baybayin Worksheets</a></button>
+
+
+  <div id="main-body">
+    <div id="main-text">
+
+    <h2 class="center">FREE Baybayin Flash Card & Games</h2>
+    <div style="text-align: center;"><a href="https://www.baamboozle.com/study/1824892"><img style="max-width:50%;" src="../assets/images/baamboozle-game.png" alt="Baamboozle" title="Baamboozle" /></a></div>
+    <p>&nbsp;</p>
+    <div style="text-align: center;"><a href="https://kahoot.it/challenge/?quiz-id=6605494f-f485-47b4-8b55-b5b35258aceb&single-player=true"><img style="max-width:50%;" src="../assets/images/kahoot-game.png" alt="Kahoot!" title="Kahoot!" /></a></div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
     </div>
-    
-    <img class="kuyabai-logo-floating floating" style="margin-right: 10px;" src="assets/images/icons/KuyaBai_Logo.png" alt="Learn Baybayin with Kuya Bai">
-    <div class="title-floating floating">Kuya Bai<br>recommends</div>
-
-    <button class="floating-btn floating" style="cursor: pointer"><a style="text-decoration: none" href="/assets/kuya-bai-worksheets-2023ed.pdf" target="_blank">Download our FREE Baybayin Worksheets</a></button>
-
-    <span class="floating-arrow floating">🡶</span>
-
-  <div id="preview-hidden"> <!-- style="border-style: solid;"> -->
-    <canvas id="canvas-hidden" height="1400" width="1400">
-    </canvas>
-    <img src="" id="image" alt="">
   </div>
 
-  <dialog id="preview">
-    <canvas id="canvas" height="320" width="320"></canvas>
-    <button id="download-preview" onclick="downloadCanvas()">download</button>
-    <button id="close-preview" class="close-preview">&times;</button>
-  </dialog>
+  <div style="text-align: center;"><br>
+
+  </div>
+
+  <div style="text-align: center;"><br>
+  </div>
+
+  <div style="text-align: center;"><br>
+  </div>
+
+  <div style="text-align: center;"><br>
+  </div>
+
+
+ 
+  <div style="text-align: center;"><br>
+  </div>
+
+
+
+  <div id="open-preview" class="open-preview"></div>
+
+  <div class="btn js-btn-open">
+
+  <canvas id="canvas" height="320" width="320"></canvas>
+  
+  <button id="close-preview" class="close-preview"></button>
 
 
 <!-- TODO: a proper footer -->
     <div class="footer" id="center">
       <br>
-      <!-- <img src="assets/images/logo_horizontal.png" height="50px"alt=""> -->
-      <span class="footer-text" id="center">Say "Hi" at hello (at) orangefix.xyz</span>
-      <br><br>
- 
-      <span class="footer-text">Thanks to the amazing work of <a href="https://jennayey.com/" target="_blank" rel="noopener noreferrer">jennayey</a> &#10084 and the <a href="https://github.com/jennayey/philippine-scripts-translator" target="_blank" rel="noopener noreferrer">Philippine Scripts Translator Project</a>.</span>
       <br><br>
       <span class="footer-text">You can also download the free <a href="https://github.com/OrangefixDev/kuya-bai-baybayin-translator/blob/main/assets/fonts/Baybayin/BaybayinNamin.otf?raw=true" target="_blank" rel="noopener noreferrer">Baybayin Namin Open Type Font</a>.</span>
       <br><br>
@@ -258,8 +189,7 @@
       <span class="footer-text" id="center">Follow us on <a href="https://www.facebook.com/KuyaBaiBaybayin" target="_blank" rel="noopener noreferrer">Facebook</a>
       <br><br>
         An <a href="https://orangefix.xyz" target="_blank" rel="noopener noreferrer"> <img class="orangefix-logo" style="margin-right: 1px;" src="https://orangefix.xyz/orangefix-logo-svg.svg" alt="orangefix logo">Orangefix</a> side hustle</span>
-      <!-- <a href='https://ko-fi.com/I2I0230S1' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
     </div>
-    <script src="js/index.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>
