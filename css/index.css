@@ -1006,7 +1006,8 @@ nav .menu.active span:nth-child(2) {
 
 #main-body {
   margin: auto;
-  width: 80%;
+  max-width: 800px;
+  padding: 0 2%;
 }
 
 #main-text {
@@ -1016,4 +1017,15 @@ nav .menu.active span:nth-child(2) {
 
 #main-text h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 0.9em;
+}
+
+.emp-text {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+
+#main-text strong {
+  font-size: 1.3em;
+  font-weight: 600;
 }
