@@ -4,4 +4,4 @@ Let Kuya Bai help you learn Baybayin, our very own pre-colonial Philippine Tagal
 
 Learn at your own pace, practice, play games and you will learn how to write & spell Baybayin in no time. 
 
-If you have questions, buzz us at hello (at) orangefix.xyz.
+If you have questions, buzz us at hello (at) proaxialdigital.com.
