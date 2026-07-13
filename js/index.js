@@ -180,7 +180,7 @@ function createImage() {
   var correction = 30;
   //var rscale = 0;
   
-  ctx.font = `${12*wscale1*hscale}em Baybayin`;
+  ctx.font = `${12*wscale1*hscale}em BaybayinNamin`;
   ttext = getText(this.dataset.transtext, this.width);
   wscale1 = getWidthScale(ttext, this.width);
   height += getHeight(ttext, hscale, wscale1, correction);
@@ -197,7 +197,7 @@ function createImage() {
     hscale = (height > 1050) ? (1050/height) : 1;
     height = 0;
 
-    ctx.font = `${12*wscale1*hscale}em Baybayin`;
+    ctx.font = `${12*wscale1*hscale}em BaybayinNamin`;
     ttext = getText(this.dataset.transtext, this.width);
     height += getHeight(ttext, hscale, wscale1, correction);
 
@@ -218,7 +218,7 @@ function createImage() {
   var x = this.width / 2;
   var y = 625 - textHeight / 2;
 
-  ctx.font = `${12*wscale1*hscale}em Baybayin`;
+  ctx.font = `${12*wscale1*hscale}em BaybayinNamin`;
   for (var k = 0; k < a; k++) ctx.fillText(ttext[k], x, y+heights[k]);
   ctx.font = `${4*wscale2*hscale}em Lexend Deca`;
   for (var l = 0; l < b; l++) ctx.fillText(rtext[l], x, y+heights[l+a]);
@@ -324,7 +324,7 @@ function getHeight(lines, hscale, wscale = 1, correction = 0) {
 
 function getHeights(text1, text2, wscale1, wscale2, hscale, correction) {
   var heights = [];
-  ctx.font = `${12*wscale1*hscale}em Baybayin`;
+  ctx.font = `${12*wscale1*hscale}em BaybayinNamin`;
   text1.forEach((element) => {
     var line = ctx.measureText(element);
     var space = (heights.length === 0) ? 0 : (heights[heights.length-1] + ((10+correction)*wscale1*hscale));
