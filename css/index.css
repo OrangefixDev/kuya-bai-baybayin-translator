@@ -34,8 +34,13 @@ Philippine Translator Scripts Stylesheet
 
 @font-face {
   font-family: Baybayin;
-  src: url(.././assets/fonts/Baybayin/BaybayinNamin.otf);
+  src: url(.././assets/fonts/Baybayin/TintangBaybayin.otf);
 }
+
+@font-face {
+  font-family: BaybayinNamin;
+  src: url(.././assets/fonts/Baybayin/BaybayinNamin.otf);
+
 
 /* ************************************************************************************************** */
 
