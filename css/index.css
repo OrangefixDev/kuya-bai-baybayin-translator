@@ -33,7 +33,7 @@ Philippine Translator Scripts Stylesheet
 /* 02 Fonts */
 
 @font-face {
-  font-family: BaybayinNamin;
+  font-family: Baybayin;
   src: url(.././assets/fonts/Baybayin/BaybayinNamin.otf);
 }
 
@@ -50,10 +50,7 @@ h5,
 h6,
 label,
 a {
-  /* font-family: 'Inter', sans-serif; */
-
   font-family: "Lexend Deca", sans-serif;
-  /* font-family: Ubuntu Regular; */
   color: var(--main-color);
   margin: 0;
   font-weight: 600;
@@ -198,7 +195,7 @@ button:hover {
 }
 
 #translatedTextArea {
-  /* font-family: BaybayinNamin; */
+  /* font-family: Baybayin; */
 }
 
 /* CSS of Share Functionality */
