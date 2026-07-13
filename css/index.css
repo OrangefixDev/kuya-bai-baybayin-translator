@@ -33,8 +33,13 @@ Philippine Translator Scripts Stylesheet
 /* 02 Fonts */
 
 @font-face {
+  font-family: TintangBaybayin;
+  src: url(/assets/fonts/Baybayin/TintangBaybayin.otf);
+}
+
+@font-face {
   font-family: Baybayin;
-  src: url(.././assets/fonts/Baybayin/BaybayinNamin.otf);
+  src: url(/assets/fonts/Baybayin/BaybayinNamin.otf);
 }
 
 /* ************************************************************************************************** */
