@@ -1028,8 +1028,14 @@ nav .menu.active span:nth-child(2) {
 }
 
 
+#elearning {
+   margin: 90px 0;
+}
 
 
+#games {
+   margin: 90px 0;
+}
 
 #faq {
     min-height:0;
@@ -1038,7 +1044,7 @@ nav .menu.active span:nth-child(2) {
     position: relative;
     left: 50%;
     transform: translate(-50%,0);
-    margin: 90px 0;
+    margin: 10px 0;
     padding:30px;
     background: #fefffa;
     box-shadow: 3px 3px 3px 3px orange;        
