@@ -113,7 +113,11 @@ body {
 }
 
 .center {
-  text-align: center;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  /*border: 3px solid green;*/ 
 }
 
 .flex-row {
@@ -1027,6 +1031,9 @@ nav .menu.active span:nth-child(2) {
   font-weight: 600;
 }
 
+#title h1 {
+  display: none;
+}
 
 #elearning {
    margin: 90px 0;
